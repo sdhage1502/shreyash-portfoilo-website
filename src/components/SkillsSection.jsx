@@ -36,10 +36,10 @@ const SkillsSection = ({ skillsData }) => {
             <p className="text-neutral-700 dark:text-neutral-300 mb-4 text-base">
               {skill.items}
             </p>
-            <div className="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2.5">
+            {/* <div className="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2.5">
               <div className={`h-2.5 rounded-full`} style={{ width: `${skill.level}%`, background: `linear-gradient(to right, ${skill.color.split(' ')[1]}, ${skill.color.split(' ')[2]})` }}></div>
-            </div>
-            <span className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 block text-right">{skill.level}% Proficient</span>
+            </div> 
+            <span className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 block text-right">{skill.level}% Proficient</span>*/}
           </div>
         ))}
       </div>
