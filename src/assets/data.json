@@ -1,0 +1,202 @@
+{
+  "educationData": [
+    {
+      "title": "Master of Computer Applications (MCA)",
+      "duration": "2023 - 2025",
+      "school": "JSPM's Jayawant Institute Of Management Studies, Pune",
+      "icon": "school",
+      "gpa": "7.5 CGPA"
+    },
+    {
+      "title": "Bachelor of Computer Applications (BCA)",
+      "duration": "2020 - 2023",
+      "school": "Vidhya Bharati Mahavidyalaya, Amravati",
+      "icon": "computer",
+      "gpa": "7.6 CGPA"
+    },
+    {
+      "title": "Senior Secondary (XII) in Science",
+      "duration": "2019 - 2020",
+      "school": "Y.C Junior College, Mangrulpir",
+      "icon": "science",
+      "gpa": "76%"
+    },
+    {
+      "title": "Secondary School (X)",
+      "duration": "2017 - 2018",
+      "school": "Y.C English High School, Mangrulpir",
+      "icon": "menu_book",
+      "gpa": "79.80%"
+    }
+  ],
+  "skillsData": [
+    {
+      "title": "Languages & Fundamentals",
+      "items": "JavaScript (ES6+), TypeScript, HTML5, CSS3, JSX",
+      "icon": "code",
+      "color": "from-blue-500 to-purple-600",
+      "level": 90
+    },
+    {
+      "title": "Frontend Libraries",
+      "items": "React.js, Redux, Context API, Tailwind CSS, Bootstrap, ShadCN UI, React Query",
+      "icon": "web",
+      "color": "from-emerald-500 to-teal-600",
+      "level": 95
+    },
+    {
+      "title": "Backend/APIs",
+      "items": "Node.js, REST APIs, Spring Boot",
+      "icon": "api",
+      "color": "from-orange-500 to-red-600",
+      "level": 85
+    },
+    {
+      "title": "Databases",
+      "items": "Firebase Firestore, MySQL",
+      "icon": "storage",
+      "color": "from-yellow-500 to-orange-600",
+      "level": 80
+    },
+    {
+      "title": "Tools",
+      "items": "Git, GitHub, Postman, Chrome DevTools, Jest, React Testing Library, Vite, Webpack",
+      "icon": "build",
+      "color": "from-cyan-500 to-blue-600",
+      "level": 85
+    },
+    {
+      "title": "Development Tools",
+      "items": "Docker, VS Code, MySQL Workbench, Figma",
+      "icon": "settings",
+      "color": "from-purple-500 to-pink-600",
+      "level": 88
+    },
+    {
+      "title": "Practices",
+      "items": "Agile/Scrum, CI/CD, Unit Testing, Cross-Browser Design, Responsive Design",
+      "icon": "menu_book",
+      "color": "from-indigo-500 to-purple-600",
+      "level": 92
+    },
+    {
+      "title": "Soft Skills",
+      "items": "Communication, Collaboration, Problem Solving, Logical Thinking",
+      "icon": "psychology",
+      "color": "from-pink-500 to-rose-600",
+      "level": 95
+    }
+  ],
+  "experienceData": [
+    {
+      "title": "Software Developer Intern",
+      "company": "Hexadecimal Software Pvt. Ltd.",
+      "duration": "Oct 2024 - Apr 2025",
+      "location": "Remote",
+      "icon": "work",
+      "color": "from-emerald-500 to-teal-600",
+      "bgColor": "from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20",
+      "accentColor": "emerald",
+      "achievements": [
+        {
+          "title": "Performance Optimization",
+          "description": "Developed responsive web apps using Next.js, React, Tailwind, and REST APIs, achieving 20% performance boost & 100% cross-device compatibility.",
+          "impact": "20% faster load times",
+          "icon": "speed"
+        },
+        {
+          "title": "Blog Platform Development",
+          "description": "Built a Gatsby blog using React, JavaScript, MDX, and GraphQL, crafting dynamic components and optimizing SEO to boost organic traffic by 45% & reduce bounce rates by 25%.",
+          "impact": "45% traffic increase",
+          "icon": "trending_up"
+        },
+        {
+          "title": "Team Leadership",
+          "description": "Led 6 interns to publish 50+ blogs through streamlined GitHub pull request workflows, slashing content delivery time by 90% & reviewing 50+ posts for quality and SEO alignment.",
+          "impact": "90% faster delivery",
+          "icon": "groups"
+        },
+        {
+          "title": "Development Workflow",
+          "description": "Leveraged GitHub for collaborative version control and Figma for UI design, accelerating team productivity by 40% through robust CI/CD practices and design-system integration.",
+          "impact": "40% productivity boost",
+          "icon": "integration_instructions"
+        }
+      ],
+      "technologies": ["Next.js", "React", "Tailwind CSS", "GraphQL", "Gatsby", "GitHub", "Figma", "MDX"],
+      "metrics": {
+        "projects": "15+",
+        "blogs": "50+",
+        "team": "6 interns",
+        "duration": "7 months"
+      }
+    }
+  ],
+  "projectsData": [
+    {
+      "title": "Decentralized Crowdfunding Platform",
+      "date": "(Dec 2024 - Present)",
+      "links": {
+        "live": "https://decentralized-crowdfunding-woad.vercel.app/",
+        "github": "https://github.com/sdhage1502/decentralized-crowdfunding"
+      },
+      "description": [
+        "Built responsive interfaces with Next.js/React, crafting campaign forms/dashboards using Tailwind CSS.",
+        "Integrated blockchain features like MetaMask wallet connectivity and live transaction tracking via Ethers.js/Web3Modal.",
+        "Leveraged Firebase Firestore for real-time campaign data storage/updates, ensuring instant sync across all users.",
+        "Improved performance by 40% through code splitting, lazy loading, and optimized Firebase data fetching."
+      ],
+      "icon": "currency_bitcoin",
+      "color": "from-yellow-500 to-orange-600",
+      "tags": ["Next.js", "Blockchain", "Firebase", "Web3"]
+    },
+    {
+      "title": "Smart Weather Forecast App with AI Assistant",
+      "date": "(May 2024 - Apr 2025)",
+      "links": {
+        "live": "https://live-weather-dash-board.vercel.app/",
+        "github": "https://github.com/sdhage1502/Live-WeatherDashBoard"
+      },
+      "description": [
+        "Developed a responsive, AI-powered weather forecasting web app using React.js, Vite, and Tailwind CSS, integrating OpenWeatherMap APIs and Meta LLAMA 3.3 via OpenRouter.",
+        "Engineered dynamic city autosuggestion with debounced search using OpenWeather Geocoding API, caching recent searches.",
+        "Implemented real-time weather and 5-day forecast displays with Axios, utilizing React Toastify for seamless user feedback and React Context API.",
+        "Leveraged prompt-engineered JSON inputs with Meta LLAMA 3.3 to generate human-readable weather summaries and personalized, seasonal Q&A."
+      ],
+      "icon": "cloud",
+      "color": "from-blue-500 to-cyan-600",
+      "tags": ["React", "AI", "Weather API", "Vite"]
+    },
+    {
+      "title": "Spring AI Chatbot",
+      "date": "(Sep 2024 - Oct 2024)",
+      "links": {
+        "github": "https://github.com/sdhage1502/Spring-AI"
+      },
+      "description": [
+        "Built an AI chatbot using Spring AI and Ollama (local LLM), automating customer support and reducing query resolution time by 30%.",
+        "Created a responsive interface with HTML/CSS/JavaScript, ensuring <1s response times and 99% browser compatibility.",
+        "Designed user-friendly workflows, boosting engagement by 25% via mobile-first UX and accessibility compliance.",
+        "Integrated Ollama's NLP model to handle 500+ daily queries at 95% accuracy with Spring Boot."
+      ],
+      "icon": "smart_toy",
+      "color": "from-purple-500 to-pink-600",
+      "tags": ["Spring Boot", "AI", "Ollama", "NLP"]
+    },
+    {
+      "title": "Spring Boot Login and Registration System",
+      "date": "(Jan 2024 - Sep 2024)",
+      "links": {
+        "github": "https://github.com/sdhage1502/Spring-SignEase"
+      },
+      "description": [
+        "Developed a secure Spring Boot application with JWT authentication using Spring Security, reducing security risks by 40% through encrypted tokens and role-based access.",
+        "Built scalable backend systems with Spring MVC, Data JPA, and MySQL, achieving 99% data accuracy and <200ms query response times.",
+        "Designed a responsive, 99% cross-device-compatible frontend using Thymeleaf, Bootstrap, HTML, and CSS, boosting user engagement by 30%."
+      ],
+      "icon": "security",
+      "color": "from-emerald-500 to-teal-600",
+      "tags": ["Spring Boot", "JWT", "MySQL", "Security"]
+    }
+  ]
+}
