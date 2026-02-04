@@ -70,7 +70,7 @@ const App = () => {
         }
 
         .gradient-border {
-          background: linear-gradient(45deg, #10b981, #14b8a6, #06b6d4, #3b82f6);
+          background: linear-gradient(45deg, #7b112c, #a1162f, #5a0b1f, #d23b55);
           background-size: 400% 400%;
           animation: gradientShift 4s ease infinite;
         }
@@ -104,12 +104,12 @@ const App = () => {
         }
       `}</style>
 
-      <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-gray-900 dark:text-gray-100 transition-all duration-700 font-sans relative overflow-x-hidden">
+      <div className="w-full min-h-screen page-shell transition-all duration-700 font-sans relative overflow-x-hidden">
 
         <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#7b112c]/15 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-[#a1162f]/10 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#d23b55]/10 rounded-full blur-3xl animate-float"></div>
         </div>
 
  
@@ -126,7 +126,7 @@ const App = () => {
             <ExperienceSection experienceData={experienceData} activeTab={activeTab} setActiveTab={setActiveTab} />
             <ProjectsSection projectsData={projectsData} activeTab={activeTab} setActiveTab={setActiveTab} />
                 {/* Development Banner - Now fixed at the bottom */}
-             <div ref={bannerRef} className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white text-center  shadow-2xl z-50">
+             <div ref={bannerRef} className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#7b112c] via-[#a1162f] to-[#d23b55] text-white text-center shadow-2xl z-50">
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 px-4 sm:px-0">
             <span className="material-symbols-outlined animate-pulse">construction</span>
             <p className="font-medium">This site is currently under active development. Check back for updates!</p>
