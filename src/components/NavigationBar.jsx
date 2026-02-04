@@ -18,11 +18,11 @@ const NavigationBar = ({ isDarkTheme, setIsDarkTheme }) => {
         <div className="flex flex-row justify-between items-center">
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="w-10 h-10 sm:w-12 sm:h-12 gradient-border rounded-full p-0.5">
-              <div className="w-full h-full bg-white dark:bg-gray-900 rounded-full flex items-center justify-center">
-                <span className="text-emerald-600 font-bold text-base sm:text-lg">SD</span>
+              <div className="w-full h-full bg-white dark:bg-neutral-950 rounded-full flex items-center justify-center">
+                <span className="text-accent font-bold text-base sm:text-lg">SD</span>
               </div>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#7b112c] to-[#a1162f] bg-clip-text text-transparent">
               Shreyash Dhage
             </h1>
           </div>
@@ -41,17 +41,17 @@ const NavigationBar = ({ isDarkTheme, setIsDarkTheme }) => {
           {/* Navigation Links */}
           <div className={`${
             isMenuOpen ? 'flex' : 'hidden'
-          } sm:flex flex-col sm:flex-row items-center sm:space-x-6 lg:space-x-8 absolute sm:static top-full left-0 w-full sm:w-auto bg-white dark:bg-gray-900 sm:bg-transparent dark:sm:bg-transparent border-t sm:border-t-0 border-neutral-200/50 dark:border-neutral-700/50 sm:p-0 p-4 transition-all duration-300`}>
+          } sm:flex flex-col sm:flex-row items-center sm:space-x-6 lg:space-x-8 absolute sm:static top-full left-0 w-full sm:w-auto bg-white dark:bg-neutral-950 sm:bg-transparent dark:sm:bg-transparent border-t sm:border-t-0 border-neutral-200/50 dark:border-neutral-700/50 sm:p-0 p-4 transition-all duration-300`}>
             {navItems.map((item, i) => (
               <a
                 key={i}
                 href={item.href}
-                className="group flex items-center space-x-1 sm:space-x-2 text-neutral-700 dark:text-neutral-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 font-medium relative py-2 sm:py-0"
+                className="group flex items-center space-x-1 sm:space-x-2 text-neutral-700 dark:text-neutral-300 hover:text-[#7b112c] dark:hover:text-[#d23b55] transition-all duration-300 font-medium relative py-2 sm:py-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="material-symbols-outlined text-xs sm:text-sm group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
                 <span className="text-sm sm:text-base">{item.text}</span>
-                <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:w-full transition-all duration-300"></div>
+                <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#7b112c] to-[#a1162f] group-hover:w-full transition-all duration-300"></div>
               </a>
             ))}
             <div className="mt-4 sm:mt-0">

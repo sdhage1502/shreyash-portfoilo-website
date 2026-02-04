@@ -34,56 +34,56 @@
       "title": "Languages & Fundamentals",
       "items": "JavaScript (ES6+), TypeScript, HTML5, CSS3, JSX",
       "icon": "code",
-      "color": "from-blue-500 to-purple-600",
+      "color": "from-[#7b112c] to-[#a1162f]",
       "level": 90
     },
     {
       "title": "Frontend Libraries",
       "items": "React.js, Redux, Context API, Tailwind CSS, Bootstrap, ShadCN UI, React Query",
       "icon": "web",
-      "color": "from-emerald-500 to-teal-600",
+      "color": "from-[#a1162f] to-[#d23b55]",
       "level": 95
     },
     {
       "title": "Backend/APIs",
       "items": "Node.js, REST APIs, Spring Boot",
       "icon": "api",
-      "color": "from-orange-500 to-red-600",
+      "color": "from-[#5a0b1f] to-[#7b112c]",
       "level": 85
     },
     {
       "title": "Databases",
       "items": "Firebase Firestore, MySQL",
       "icon": "storage",
-      "color": "from-yellow-500 to-orange-600",
+      "color": "from-[#7b112c] to-[#d23b55]",
       "level": 80
     },
     {
       "title": "Tools",
       "items": "Git, GitHub, Postman, Chrome DevTools, Jest, React Testing Library, Vite, Webpack",
       "icon": "build",
-      "color": "from-cyan-500 to-blue-600",
+      "color": "from-[#a1162f] to-[#7b112c]",
       "level": 85
     },
     {
       "title": "Development Tools",
       "items": "Docker, VS Code, MySQL Workbench, Figma",
       "icon": "settings",
-      "color": "from-purple-500 to-pink-600",
+      "color": "from-[#7b112c] to-[#a1162f]",
       "level": 88
     },
     {
       "title": "Practices",
       "items": "Agile/Scrum, CI/CD, Unit Testing, Cross-Browser Design, Responsive Design",
       "icon": "menu_book",
-      "color": "from-indigo-500 to-purple-600",
+      "color": "from-[#5a0b1f] to-[#a1162f]",
       "level": 92
     },
     {
       "title": "Soft Skills",
       "items": "Communication, Collaboration, Problem Solving, Logical Thinking",
       "icon": "psychology",
-      "color": "from-pink-500 to-rose-600",
+      "color": "from-[#a1162f] to-[#d23b55]",
       "level": 95
     }
   ],
@@ -94,9 +94,9 @@
       "duration": "Oct 2024 - Apr 2025",
       "location": "Remote",
       "icon": "work",
-      "color": "from-emerald-500 to-teal-600",
-      "bgColor": "from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20",
-      "accentColor": "emerald",
+      "color": "from-[#7b112c] to-[#a1162f]",
+      "bgColor": "from-[#fdf4f6] to-[#f8e6eb] dark:from-[#2a0a12] dark:to-[#3a0f1a]",
+      "accentColor": "wine",
       "achievements": [
         {
           "title": "Performance Optimization",
@@ -147,7 +147,7 @@
         "Improved performance by 40% through code splitting, lazy loading, and optimized Firebase data fetching."
       ],
       "icon": "currency_bitcoin",
-      "color": "from-yellow-500 to-orange-600",
+      "color": "from-[#7b112c] to-[#a1162f]",
       "tags": ["Next.js", "Blockchain", "Firebase", "Web3"]
     },
     {
@@ -164,7 +164,7 @@
         "Leveraged prompt-engineered JSON inputs with Meta LLAMA 3.3 to generate human-readable weather summaries and personalized, seasonal Q&A."
       ],
       "icon": "cloud",
-      "color": "from-blue-500 to-cyan-600",
+      "color": "from-[#a1162f] to-[#d23b55]",
       "tags": ["React", "AI", "Weather API", "Vite"]
     },
     {
@@ -180,7 +180,7 @@
         "Integrated Ollama's NLP model to handle 500+ daily queries at 95% accuracy with Spring Boot."
       ],
       "icon": "smart_toy",
-      "color": "from-purple-500 to-pink-600",
+      "color": "from-[#5a0b1f] to-[#7b112c]",
       "tags": ["Spring Boot", "AI", "Ollama", "NLP"]
     },
     {
@@ -195,7 +195,7 @@
         "Designed a responsive, 99% cross-device-compatible frontend using Thymeleaf, Bootstrap, HTML, and CSS, boosting user engagement by 30%."
       ],
       "icon": "security",
-      "color": "from-emerald-500 to-teal-600",
+      "color": "from-[#7b112c] to-[#a1162f]",
       "tags": ["Spring Boot", "JWT", "MySQL", "Security"]
     }
   ]
