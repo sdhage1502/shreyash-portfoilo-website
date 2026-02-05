@@ -22,7 +22,7 @@ const NavigationBar = ({ isDarkTheme, setIsDarkTheme }) => {
                 <span className="text-accent font-bold text-base sm:text-lg">SD</span>
               </div>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#7b112c] to-[#a1162f] bg-clip-text text-transparent">
+            <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#a63e3e] to-[#57574f] bg-clip-text text-transparent">
               Shreyash Dhage
             </h1>
           </div>
@@ -46,12 +46,12 @@ const NavigationBar = ({ isDarkTheme, setIsDarkTheme }) => {
               <a
                 key={i}
                 href={item.href}
-                className="group flex items-center space-x-1 sm:space-x-2 text-neutral-700 dark:text-neutral-300 hover:text-[#7b112c] dark:hover:text-[#d23b55] transition-all duration-300 font-medium relative py-2 sm:py-0"
+                className="group flex items-center space-x-1 sm:space-x-2 text-neutral-700 dark:text-neutral-300 hover:text-[#a63e3e] dark:hover:text-[#a63e3e] transition-all duration-300 font-medium relative py-2 sm:py-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="material-symbols-outlined text-xs sm:text-sm group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
                 <span className="text-sm sm:text-base">{item.text}</span>
-                <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#7b112c] to-[#a1162f] group-hover:w-full transition-all duration-300"></div>
+                <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#a63e3e] to-[#57574f] group-hover:w-full transition-all duration-300"></div>
               </a>
             ))}
             <div className="mt-4 sm:mt-0">

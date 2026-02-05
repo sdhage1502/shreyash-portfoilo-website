@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useState, useEffect, useRef } from 'react'; // Import useRef
+import React, { useState, useEffect, useRef } from 'react';
 import NavigationBar from './components/NavigationBar';
 import HeroSection from './components/HeroSection';
 import EducationSection from './components/EducationSection';
@@ -13,8 +13,8 @@ import { educationData, skillsData, projectsData, experienceData } from "../src/
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [activeTab, setActiveTab] = useState(null);
-  const bannerRef = useRef(null); // Create a ref for the banner
-  const [bannerHeight, setBannerHeight] = useState(0); // State to store banner height
+  const bannerRef = useRef(null);
+  const [bannerHeight, setBannerHeight] = useState(0);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -25,8 +25,6 @@ const App = () => {
     }
   }, [isDarkTheme]);
 
-  // Effect to measure the banner's height after rendering
-  // and re-measure on window resize to ensure correct padding for content below.
   useEffect(() => {
     if (bannerRef.current) {
       setBannerHeight(bannerRef.current.offsetHeight);
@@ -37,102 +35,89 @@ const App = () => {
       }
     };
     window.addEventListener('resize', handleResize);
-    // Cleanup the event listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Empty dependency array means this runs once on mount and on unmount for cleanup
+  }, []);
 
+  useEffect(() => {
+    let ctx;
+    let isMounted = true;
+    const loadScript = (src) =>
+      new Promise((resolve, reject) => {
+        if (document.querySelector(`script[src="${src}"]`)) {
+          resolve();
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+
+    const initGsap = async () => {
+      try {
+        await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js');
+        await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js');
+        if (!isMounted || !window.gsap || !window.ScrollTrigger) return;
+        window.gsap.registerPlugin(window.ScrollTrigger);
+        ctx = window.gsap.context(() => {
+          window.gsap.utils.toArray('.section-reveal').forEach((section) => {
+            window.gsap.fromTo(
+              section,
+              { opacity: 0, y: 40 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: section,
+                  start: 'top 80%',
+                },
+              }
+            );
+          });
+        });
+      } catch (error) {
+        console.error('Failed to load GSAP', error);
+      }
+    };
+
+    initGsap();
+    return () => {
+      isMounted = false;
+      if (ctx) {
+        ctx.revert();
+      }
+    };
+  }, []);
 
   return (
     <div id="webcrumbs">
-      {/* Global styles (consider moving these to a global CSS file) */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-        body { font-family: 'Inter', sans-serif; }
-
-        /* ... remaining global animations and glass-morphism styles ... */
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-float-delayed {
-          animation: float 6s ease-in-out infinite 3s;
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-
-        .animate-pulse-slow {
-          animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        .gradient-border {
-          background: linear-gradient(45deg, #7b112c, #a1162f, #5a0b1f, #d23b55);
-          background-size: 400% 400%;
-          animation: gradientShift 4s ease infinite;
-        }
-
-        @keyframes gradientShift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-
-        .glass-morphism {
-          backdrop-filter: blur(16px) saturate(180%);
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.125);
-        }
-
-        .dark .glass-morphism {
-          background: rgba(0, 0, 0, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Animations for Experience Section */
-        @keyframes pulse-ring {
-          0% { transform: scale(0.33); }
-          40%, 50% { opacity: 1; }
-          100% { opacity: 0; transform: scale(1.2); }
-        }
-
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
-      `}</style>
-
       <div className="w-full min-h-screen page-shell transition-all duration-700 font-sans relative overflow-x-hidden">
-
         <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#7b112c]/15 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-[#a1162f]/10 rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#d23b55]/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-16 left-10 w-72 h-72 bg-[#a63e3e]/15 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-[#57574f]/10 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#a63e3e]/10 rounded-full blur-3xl animate-float"></div>
         </div>
 
- 
-       
-
-        {/* This div adds dynamic padding-top to prevent content from going under the fixed banner */}
         <div style={{ paddingBottom: `${bannerHeight}px` }}>
           <NavigationBar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
 
-          <main className="relative px-6 py-12 space-y-32">
+          <main className="relative px-6 py-10 space-y-28">
             <HeroSection />
-            <EducationSection educationData={educationData} activeTab={activeTab} setActiveTab={setActiveTab} />
-            <SkillsSection skillsData={skillsData} />
-            <ExperienceSection experienceData={experienceData} activeTab={activeTab} setActiveTab={setActiveTab} />
-            <ProjectsSection projectsData={projectsData} activeTab={activeTab} setActiveTab={setActiveTab} />
-                {/* Development Banner - Now fixed at the bottom */}
-             <div ref={bannerRef} className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#7b112c] via-[#a1162f] to-[#d23b55] text-white text-center shadow-2xl z-50">
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 px-4 sm:px-0">
-            <span className="material-symbols-outlined animate-pulse">construction</span>
-            <p className="font-medium">This site is currently under active development. Check back for updates!</p>
-            <span className="material-symbols-outlined animate-pulse">construction</span>
-          </div>
-        </div>
+            <EducationSection className="section-reveal" educationData={educationData} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <SkillsSection className="section-reveal" skillsData={skillsData} />
+            <ExperienceSection className="section-reveal" experienceData={experienceData} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <ProjectsSection className="section-reveal" projectsData={projectsData} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <div ref={bannerRef} className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#57574f] via-[#a63e3e] to-[#57574f] text-white text-center shadow-2xl z-50">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 px-4 sm:px-0 py-2">
+                <span className="material-symbols-outlined animate-pulse">construction</span>
+                <p className="font-medium">This site is currently under active development. Check back for updates!</p>
+                <span className="material-symbols-outlined animate-pulse">construction</span>
+              </div>
+            </div>
           </main>
           <Footer />
         </div>
