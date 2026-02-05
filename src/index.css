@@ -1,31 +1,40 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-/* styles/globals.css */
+
 :root {
-  --background-color: #ffffff;
-  --text-color: #0b0b0b;
-  --surface-color: #f7f5f7;
-  --accent-color: #7b112c;
-  --accent-strong: #5a0b1f;
-  --accent-soft: rgba(123, 17, 44, 0.12);
+  --background-color: #f9f9f9;
+  --text-color: #57574f;
+  --surface-color: #ffffff;
+  --accent-color: #a63e3e;
+  --accent-strong: #7f2f2f;
+  --accent-soft: rgba(166, 62, 62, 0.12);
+  --shadow-color: rgba(87, 87, 79, 0.12);
 }
 
 .dark {
-  --background-color: #0b0b0b;
-  --text-color: #f5f5f5;
-  --surface-color: #151515;
-  --accent-color: #a1162f;
-  --accent-strong: #7b112c;
-  --accent-soft: rgba(161, 22, 47, 0.2);
+  --background-color: #1c1c19;
+  --text-color: #f9f9f9;
+  --surface-color: #242420;
+  --accent-color: #a63e3e;
+  --accent-strong: #d46c6c;
+  --accent-soft: rgba(166, 62, 62, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
 .page-shell {
-  background: radial-gradient(circle at top, var(--accent-soft), transparent 55%), var(--background-color);
+  background: radial-gradient(circle at top, var(--accent-soft), transparent 55%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.6), transparent 60%),
+    var(--background-color);
   color: var(--text-color);
 }
 
@@ -48,70 +57,135 @@ body {
 .accent-gradient {
   background: linear-gradient(135deg, var(--accent-color), var(--accent-strong));
 }
-@keyframes marquee {
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-strong));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glass-morphism {
+  backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px var(--shadow-color);
+}
+
+.dark .glass-morphism {
+  background: rgba(28, 28, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-shell {
+  border: 1px solid rgba(87, 87, 79, 0.1);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 30px 80px var(--shadow-color);
+}
+
+.dark .section-shell {
+  background: rgba(28, 28, 25, 0.65);
+  border-color: rgba(249, 249, 249, 0.08);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite 3s;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-border {
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-strong), #57574f, var(--accent-color));
+  background-size: 400% 400%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes pulse-ring {
   0% {
-    transform: translateX(100%);
+    transform: scale(0.33);
+  }
+  40%,
+  50% {
+    opacity: 1;
   }
   100% {
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: scale(1.2);
   }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 4s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-marquee {
+  display: inline-flex;
+  gap: 2.5rem;
+  white-space: nowrap;
+}
+
+.hero-marquee span {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: rgba(87, 87, 79, 0.55);
+}
+
+.dark .hero-marquee span {
+  color: rgba(249, 249, 249, 0.45);
 }
 
 .animate-marquee {
-  display: inline-block;
-  animation: marquee 15s linear infinite;
+  animation: marquee 18s linear infinite;
 }
 
-        body { font-family: 'Inter', sans-serif; }
+.canvas-shell {
+  background: radial-gradient(circle at top, rgba(166, 62, 62, 0.2), transparent 60%),
+    rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(166, 62, 62, 0.2);
+}
 
-        /* ... remaining global animations and glass-morphism styles ... */
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-float-delayed {
-          animation: float 6s ease-in-out infinite 3s;
-        }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-
-        .animate-pulse-slow {
-          animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        .gradient-border {
-          background: linear-gradient(45deg, #7b112c, #a1162f, #5a0b1f, #d23b55);
-          background-size: 400% 400%;
-          animation: gradientShift 4s ease infinite;
-        }
-
-        @keyframes gradientShift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-
-        .glass-morphism {
-          backdrop-filter: blur(16px) saturate(180%);
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.125);
-        }
-
-        .dark .glass-morphism {
-          background: rgba(0, 0, 0, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Animations for Experience Section */
-        @keyframes pulse-ring {
-          0% { transform: scale(0.33); }
-          40%, 50% { opacity: 1; }
-          100% { opacity: 0; transform: scale(1.2); }
-        }
-
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
+.dark .canvas-shell {
+  background: radial-gradient(circle at top, rgba(166, 62, 62, 0.2), transparent 60%),
+    rgba(28, 28, 25, 0.45);
+}

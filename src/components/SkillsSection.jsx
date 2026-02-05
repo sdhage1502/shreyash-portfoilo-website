@@ -1,21 +1,21 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'https://esm.sh/framer-motion@12.23.12';
 
-const SkillsSection = ({ skillsData }) => {
+const SkillsSection = ({ skillsData, className = '' }) => {
   return (
-    <section id="skills" className="space-y-12">
+    <section id="skills" className={`space-y-12 ${className}`}>
       <div className="text-center space-y-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#7b112c]/20 via-[#a1162f]/20 to-[#d23b55]/20 blur-3xl rounded-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#a63e3e]/20 via-[#57574f]/20 to-[#a63e3e]/20 blur-3xl rounded-full"></div>
         <div className="relative">
           <div className="inline-flex items-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#7b112c] to-[#a1162f] rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#a63e3e] to-[#57574f] rounded-2xl flex items-center justify-center shadow-lg">
               <span className="material-symbols-outlined text-white text-xl">psychology</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#7b112c] via-[#a1162f] to-[#d23b55] bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold text-gradient">
               Skills
             </h2>
           </div>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-[#7b112c] via-[#a1162f] to-[#d23b55] mx-auto rounded-full shadow-lg"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-[#a63e3e] via-[#57574f] to-[#a63e3e] mx-auto rounded-full shadow-lg"></div>
           <p className="text-lg text-neutral-600 dark:text-neutral-400 mt-4 max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise and soft skills.
           </p>
@@ -37,7 +37,7 @@ const SkillsSection = ({ skillsData }) => {
               <div className={`w-14 h-14 bg-gradient-to-br ${skill.color} rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                 <span className="material-symbols-outlined text-white text-2xl">{skill.icon}</span>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#7b112c] dark:group-hover:text-[#d23b55] transition-colors duration-300">
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#a63e3e] dark:group-hover:text-[#a63e3e] transition-colors duration-300">
                 {skill.title}
               </h3>
             </div>

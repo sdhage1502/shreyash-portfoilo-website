@@ -23,9 +23,9 @@ const ThemeToggle = () => {
       aria-label="Toggle Theme"
     >
       {current === "dark" ? (
-        <FiSun className="h-5 w-5 text-[#d23b55]" />
+        <FiSun className="h-5 w-5 text-[#a63e3e]" />
       ) : (
-        <HiMoon className="h-5 w-5 text-[#7b112c]" />
+        <HiMoon className="h-5 w-5 text-[#a63e3e]" />
       )}
     </button>
   );

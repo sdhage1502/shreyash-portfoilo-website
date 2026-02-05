@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <footer className="glass-morphism shadow-inner border-t border-neutral-200/50 dark:border-neutral-700/50 py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 lg:mt-24 relative">
-      <div className="absolute inset-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-[#7b112c] to-transparent animate-shimmer"></div>
+      <div className="absolute inset-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-[#a63e3e] to-transparent animate-shimmer"></div>
 
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left space-y-6 sm:space-y-0 gap-4 sm:gap-0">
         {/* Copyright Information */}
@@ -34,7 +34,7 @@ const Footer = () => {
             <a
               key={i}
               href={link.href}
-              className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 hover:text-[#7b112c] dark:hover:text-[#d23b55] transition-colors duration-300"
+              className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 hover:text-[#a63e3e] dark:hover:text-[#a63e3e] transition-colors duration-300"
               aria-label={link.text}
             >
               {link.text}
@@ -52,7 +52,7 @@ const Footer = () => {
                 target={social.href.startsWith('mailto') ? undefined : "_blank"}
                 rel={social.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
                 aria-label={social.label}
-                className="group flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-[#7b112c] to-[#a1162f] rounded-full text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110 relative overflow-hidden"
+                className="group flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-[#a63e3e] to-[#57574f] rounded-full text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
                 {social.text ? (
@@ -68,7 +68,7 @@ const Footer = () => {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="group flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-[#7b112c] to-[#a1162f] rounded-full text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110 relative overflow-hidden"
+            className="group flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-[#a63e3e] to-[#57574f] rounded-full text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
             <span className="material-symbols-outlined text-base sm:text-lg lg:text-xl group-hover:scale-110 transition-transform duration-300 relative z-10">
