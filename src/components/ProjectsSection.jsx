@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'https://esm.sh/framer-motion@12.23.12';
+import { motion } from 'framer-motion';
 
 const ProjectsSection = ({ projectsData, activeTab, setActiveTab, className = '' }) => {
   return (
