@@ -6,6 +6,7 @@ import EducationSection from './components/EducationSection';
 import SkillsSection from './components/SkillsSection';
 import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
+import VfxToolkitSection from './components/VfxToolkitSection';
 import Footer from './components/Footer';
 import { educationData, skillsData, projectsData, experienceData } from "../src/assets/data.json";
 
@@ -111,6 +112,7 @@ const App = () => {
             <SkillsSection className="section-reveal" skillsData={skillsData} />
             <ExperienceSection className="section-reveal" experienceData={experienceData} activeTab={activeTab} setActiveTab={setActiveTab} />
             <ProjectsSection className="section-reveal" projectsData={projectsData} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <VfxToolkitSection />
             <div ref={bannerRef} className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#57574f] via-[#a63e3e] to-[#57574f] text-white text-center shadow-2xl z-50">
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 px-4 sm:px-0 py-2">
                 <span className="material-symbols-outlined animate-pulse">construction</span>
