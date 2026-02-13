@@ -1,53 +1,41 @@
-// src/App.jsx
-import React, { useState, useEffect, useRef } from 'react';
-import NavigationBar from './components/NavigationBar';
-import HeroSection from './components/HeroSection';
-import EducationSection from './components/EducationSection';
-import SkillsSection from './components/SkillsSection';
-import ExperienceSection from './components/ExperienceSection';
-import ProjectsSection from './components/ProjectsSection';
-import VfxToolkitSection from './components/VfxToolkitSection';
-import Footer from './components/Footer';
-import { educationData, skillsData, projectsData, experienceData } from "../src/assets/data.json";
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import './App.css';
+import { educationData, skillsData, projectsData, experienceData } from './assets/data.json';
 
+const chapterLinks = [
+  { id: 'hero', label: 'Intro' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
+];
+
+const stats = [
+  { label: 'Projects Delivered', value: 15, suffix: '+' },
+  { label: 'Internship Duration', value: 7, suffix: ' Months' },
+  { label: 'Blogs Published', value: 50, suffix: '+' },
+  { label: 'Performance Uplift', value: 40, suffix: '%' },
+];
 
 const App = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [activeTab, setActiveTab] = useState(null);
-  const bannerRef = useRef(null);
-  const [bannerHeight, setBannerHeight] = useState(0);
+  const [activeSection, setActiveSection] = useState('hero');
+  const [counts, setCounts] = useState(stats.map(() => 0));
+  const cardRefs = useRef([]);
 
-  useEffect(() => {
-    const html = document.documentElement;
-    if (isDarkTheme) {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
-  }, [isDarkTheme]);
-
-  useEffect(() => {
-    if (bannerRef.current) {
-      setBannerHeight(bannerRef.current.offsetHeight);
-    }
-    const handleResize = () => {
-      if (bannerRef.current) {
-        setBannerHeight(bannerRef.current.offsetHeight);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const topSkills = useMemo(() => skillsData.slice(0, 6), []);
 
   useEffect(() => {
     let ctx;
-    let isMounted = true;
+    let cancelled = false;
+
     const loadScript = (src) =>
       new Promise((resolve, reject) => {
         if (document.querySelector(`script[src="${src}"]`)) {
           resolve();
           return;
         }
+
         const script = document.createElement('script');
         script.src = src;
         script.async = true;
@@ -56,17 +44,26 @@ const App = () => {
         document.head.appendChild(script);
       });
 
-    const initGsap = async () => {
+    const setupAnimations = async () => {
       try {
         await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js');
         await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js');
-        if (!isMounted || !window.gsap || !window.ScrollTrigger) return;
+
+        if (cancelled || !window.gsap || !window.ScrollTrigger) return;
+
         window.gsap.registerPlugin(window.ScrollTrigger);
+
         ctx = window.gsap.context(() => {
-          window.gsap.utils.toArray('.section-reveal').forEach((section) => {
+          window.gsap.fromTo(
+            '.hero-copy > *',
+            { opacity: 0, y: 35 },
+            { opacity: 1, y: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out' },
+          );
+
+          window.gsap.utils.toArray('.reveal-section').forEach((section) => {
             window.gsap.fromTo(
               section,
-              { opacity: 0, y: 40 },
+              { opacity: 0, y: 60 },
               {
                 opacity: 1,
                 y: 0,
@@ -74,58 +71,216 @@ const App = () => {
                 ease: 'power3.out',
                 scrollTrigger: {
                   trigger: section,
-                  start: 'top 80%',
+                  start: 'top 82%',
                 },
-              }
+              },
             );
+          });
+
+          const sections = window.gsap.utils.toArray('section[id]');
+          sections.forEach((section) => {
+            window.ScrollTrigger.create({
+              trigger: section,
+              start: 'top 40%',
+              end: 'bottom 40%',
+              onToggle: (self) => self.isActive && setActiveSection(section.id),
+            });
           });
         });
       } catch (error) {
-        console.error('Failed to load GSAP', error);
+        console.error('Animation library load failed:', error);
       }
     };
 
-    initGsap();
+    setupAnimations();
+
     return () => {
-      isMounted = false;
-      if (ctx) {
-        ctx.revert();
-      }
+      cancelled = true;
+      if (ctx) ctx.revert();
     };
   }, []);
 
+  useEffect(() => {
+    let rafId;
+    const start = performance.now();
+    const duration = 1300;
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - (1 - progress) ** 4;
+      setCounts(stats.map((item) => Math.floor(item.value * eased)));
+      if (progress < 1) rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  const handleTilt = (event, index) => {
+    const card = cardRefs.current[index];
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateX = ((y / rect.height) - 0.5) * -10;
+    const rotateY = ((x / rect.width) - 0.5) * 10;
+
+    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+  };
+
+  const resetTilt = (index) => {
+    const card = cardRefs.current[index];
+    if (card) card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+  };
+
   return (
-    <div id="webcrumbs">
-      <div className="w-full min-h-screen page-shell transition-all duration-700 font-sans relative overflow-x-hidden">
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-16 left-10 w-72 h-72 bg-[#a63e3e]/15 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-[#57574f]/10 rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#a63e3e]/10 rounded-full blur-3xl animate-float"></div>
-        </div>
+    <div className="portfolio-root">
+      <header className="top-nav glass-panel">
+        <a href="#hero" className="brand">Shreyash.dev</a>
+        <nav>
+          {chapterLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className={activeSection === link.id ? 'active' : ''}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </header>
 
-        <div style={{ paddingBottom: `${bannerHeight}px` }}>
-          <NavigationBar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+      <main>
+        <section id="hero" className="hero-section">
+          <canvas className="hero-webgl" />
+          <div className="hero-overlay" />
 
-          <main className="relative px-6 py-10 space-y-28">
-            <HeroSection />
-            <EducationSection className="section-reveal" educationData={educationData} activeTab={activeTab} setActiveTab={setActiveTab} />
-            <SkillsSection className="section-reveal" skillsData={skillsData} />
-            <ExperienceSection className="section-reveal" experienceData={experienceData} activeTab={activeTab} setActiveTab={setActiveTab} />
-            <ProjectsSection className="section-reveal" projectsData={projectsData} activeTab={activeTab} setActiveTab={setActiveTab} />
-            <VfxToolkitSection />
-            <div ref={bannerRef} className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-[#57574f] via-[#a63e3e] to-[#57574f] text-white text-center shadow-2xl z-50">
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2 px-4 sm:px-0 py-2">
-                <span className="material-symbols-outlined animate-pulse">construction</span>
-                <p className="font-medium">This site is currently under active development. Check back for updates!</p>
-                <span className="material-symbols-outlined animate-pulse">construction</span>
+          <div className="hero-copy glass-panel">
+            <p className="chapter-label">Chapter 01 · Introduction</p>
+            <h1>
+              Building <span>modern</span>,
+              <br />
+              scroll-first digital experiences.
+            </h1>
+            <p>
+              I am Shreyash Dhage, a frontend-focused developer crafting narrative portfolio and product experiences with React, animation systems, and performance-first architecture.
+            </p>
+            <div className="hero-actions">
+              <a href="#projects" className="btn-primary">Explore Work</a>
+              <a href="#contact" className="btn-secondary">Let&apos;s Connect</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="content-section reveal-section">
+          <p className="chapter-label">Chapter 02 · About</p>
+          <h2>From ideas to delightful interfaces.</h2>
+          <p className="section-intro">
+            Currently pursuing MCA while building high-impact web products. I combine UI storytelling, clear information hierarchy, and clean engineering to create portfolios and apps that feel alive.
+          </p>
+          <div className="education-grid">
+            {educationData.map((item) => (
+              <article key={item.title} className="glass-panel education-card">
+                <p>{item.duration}</p>
+                <h3>{item.title}</h3>
+                <span>{item.school}</span>
+                <strong>{item.gpa}</strong>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="content-section reveal-section">
+          <p className="chapter-label">Chapter 03 · Skills</p>
+          <h2>Production-ready skill stack.</h2>
+          <div className="skills-grid">
+            {topSkills.map((skill) => (
+              <article key={skill.title} className="glass-panel skill-card">
+                <h3>{skill.title}</h3>
+                <p>{skill.items}</p>
+                <div className="skill-meter">
+                  <div style={{ width: `${skill.level}%` }} />
+                </div>
+                <small>{skill.level}% confidence</small>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="content-section reveal-section">
+          <p className="chapter-label">Chapter 04 · Selected Projects</p>
+          <h2>Interactive builds with measurable outcomes.</h2>
+          <div className="projects-grid">
+            {projectsData.map((project, index) => (
+              <article
+                key={project.title}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+                className="project-card"
+                onMouseMove={(event) => handleTilt(event, index)}
+                onMouseLeave={() => resetTilt(index)}
+              >
+                <div className="project-head">
+                  <h3>{project.title}</h3>
+                  <span>{project.date}</span>
+                </div>
+                <p>{project.description[0]}</p>
+                <div className="tags">
+                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+                <div className="project-actions">
+                  {project.links.live && <a href={project.links.live} target="_blank" rel="noreferrer">Live</a>}
+                  {project.links.github && <a href={project.links.github} target="_blank" rel="noreferrer">GitHub</a>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="experience" className="content-section reveal-section">
+          <p className="chapter-label">Chapter 05 · Experience & Stats</p>
+          <h2>Building real products under real constraints.</h2>
+          <div className="timeline glass-panel">
+            <h3>{experienceData[0].title}</h3>
+            <p>{experienceData[0].company} · {experienceData[0].duration}</p>
+            <ul>
+              {experienceData[0].achievements.slice(0, 3).map((item) => <li key={item.title}>{item.description}</li>)}
+            </ul>
+          </div>
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <article key={stat.label} className="stat-card glass-panel">
+                <strong>{counts[index]}{stat.suffix}</strong>
+                <span>{stat.label}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="content-section reveal-section">
+          <p className="chapter-label">Chapter 06 · Contact</p>
+          <h2>Let&apos;s build your next standout experience.</h2>
+          <div className="contact-layout glass-panel">
+            <div>
+              <p>Open to frontend, React, and creative developer roles. Available for freelance portfolio/web-app builds.</p>
+              <div className="contact-links">
+                <a href="mailto:sdhage1502@gmail.com">sdhage1502@gmail.com</a>
+                <a href="https://github.com/sdhage1502" target="_blank" rel="noreferrer">github.com/sdhage1502</a>
               </div>
             </div>
-          </main>
-          <Footer />
-        </div>
-      </div>
+            <form>
+              <input type="text" placeholder="Your name" />
+              <input type="email" placeholder="Your email" />
+              <textarea rows="4" placeholder="Project brief" />
+              <button type="button">Send Message</button>
+            </form>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
 
-export default App; 
+export default App;
