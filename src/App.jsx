@@ -26,6 +26,40 @@ const App = () => {
   const topSkills = useMemo(() => skillsData.slice(0, 6), []);
 
   useEffect(() => {
+    const scriptSrc = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.5/dist/unicornStudio.umd.js';
+
+    const initUnicornStudio = () => {
+      if (window.UnicornStudio && window.UnicornStudio.init) {
+        window.UnicornStudio.init();
+      }
+    };
+
+    if (window.UnicornStudio && window.UnicornStudio.init) {
+      initUnicornStudio();
+      return;
+    }
+
+    if (!window.UnicornStudio) {
+      window.UnicornStudio = { isInitialized: false };
+    }
+
+    const existingScript = document.querySelector(`script[src="${scriptSrc}"]`);
+    if (existingScript) {
+      existingScript.addEventListener('load', initUnicornStudio);
+      return () => existingScript.removeEventListener('load', initUnicornStudio);
+    }
+
+    const unicornScript = document.createElement('script');
+    unicornScript.src = scriptSrc;
+    unicornScript.onload = initUnicornStudio;
+    (document.head || document.body).appendChild(unicornScript);
+
+    return () => {
+      unicornScript.onload = null;
+    };
+  }, []);
+
+  useEffect(() => {
     let ctx;
     let cancelled = false;
 
@@ -153,7 +187,7 @@ const App = () => {
 
       <main>
         <section id="hero" className="hero-section">
-          <canvas className="hero-webgl" />
+          <div data-us-project="XetyeigdK71yKvVDFhQy" className="hero-webgl" style={{ width: '1440px', height: '900px' }} />
           <div className="hero-overlay" />
 
           <div className="hero-copy glass-panel">
