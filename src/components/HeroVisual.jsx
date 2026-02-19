@@ -7,7 +7,9 @@ const HeroVisual = () => {
     let renderer;
     let scene;
     let camera;
-    let sphere;
+    let coreMesh;
+    let orbitRing;
+    let orbitNodes = [];
     let animationFrame;
     let isMounted = true;
     let removeResizeListener;
@@ -50,14 +52,40 @@ const HeroVisual = () => {
 
         scene.add(ambientLight, directionalLight, pointLight);
 
-        const geometry = new THREE.SphereGeometry(1.1, 64, 64);
-        const material = new THREE.MeshStandardMaterial({
+        const coreGeometry = new THREE.IcosahedronGeometry(0.9, 1);
+        const coreMaterial = new THREE.MeshStandardMaterial({
           color: 0xa63e3e,
-          roughness: 0.25,
-          metalness: 0.5,
+          roughness: 0.35,
+          metalness: 0.55,
+          flatShading: true,
         });
-        sphere = new THREE.Mesh(geometry, material);
-        scene.add(sphere);
+
+        coreMesh = new THREE.Mesh(coreGeometry, coreMaterial);
+        scene.add(coreMesh);
+
+        const ringGeometry = new THREE.TorusGeometry(1.45, 0.045, 24, 160);
+        const ringMaterial = new THREE.MeshStandardMaterial({
+          color: 0xf0d7d7,
+          roughness: 0.5,
+          metalness: 0.25,
+        });
+        orbitRing = new THREE.Mesh(ringGeometry, ringMaterial);
+        orbitRing.rotation.x = Math.PI / 2.8;
+        scene.add(orbitRing);
+
+        const nodeColors = [0xff8a8a, 0xa63e3e, 0xf9f9f9];
+        orbitNodes = nodeColors.map((nodeColor) => {
+          const node = new THREE.Mesh(
+            new THREE.BoxGeometry(0.24, 0.24, 0.24),
+            new THREE.MeshStandardMaterial({
+              color: nodeColor,
+              roughness: 0.2,
+              metalness: 0.6,
+            })
+          );
+          scene.add(node);
+          return node;
+        });
 
         const resize = () => {
           if (!canvasRef.current || !canvasRef.current.parentElement) return;
@@ -74,9 +102,26 @@ const HeroVisual = () => {
         const animate = () => {
           if (!isMounted) return;
           const time = performance.now() * 0.001;
-          sphere.rotation.y = time * 0.4;
-          sphere.rotation.x = time * 0.25;
-          sphere.position.y = Math.sin(time) * 0.15;
+
+          coreMesh.rotation.y = time * 0.42;
+          coreMesh.rotation.x = time * 0.21;
+          coreMesh.position.y = Math.sin(time * 1.2) * 0.08;
+
+          orbitRing.rotation.z = time * 0.32;
+          orbitRing.rotation.y = Math.sin(time * 0.25) * 0.22;
+
+          const orbitRadius = 1.45;
+          orbitNodes.forEach((node, index) => {
+            const angle = time * 0.95 + (index * (Math.PI * 2)) / orbitNodes.length;
+            node.position.set(
+              Math.cos(angle) * orbitRadius,
+              Math.sin(angle * 1.15) * 0.32,
+              Math.sin(angle) * orbitRadius
+            );
+            node.rotation.x = time * 0.8 + index;
+            node.rotation.y = time * 0.6 + index * 0.5;
+          });
+
           renderer.render(scene, camera);
           animationFrame = requestAnimationFrame(animate);
         };
@@ -100,6 +145,7 @@ const HeroVisual = () => {
       if (renderer) {
         renderer.dispose();
       }
+      orbitNodes = [];
     };
   }, []);
 
@@ -110,11 +156,11 @@ const HeroVisual = () => {
       </div>
       <div className="mt-6 space-y-3">
         <div className="flex items-center justify-between text-sm uppercase tracking-[0.25em] text-[#57574f]/60 dark:text-[#f9f9f9]/60">
-          <span>3D Studies</span>
+          <span>Career Orbit</span>
           <span>Three.js</span>
         </div>
         <p className="text-base sm:text-lg font-semibold text-[#57574f] dark:text-[#f9f9f9]">
-          Interactive 3D storytelling using WebGL surfaces and motion-tuned lighting.
+          Built around my MCA foundation, Next.js internships, and Web3-focused projects across GitHub and LinkedIn.
         </p>
       </div>
     </div>
