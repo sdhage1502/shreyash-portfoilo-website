@@ -64,15 +64,15 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-3 rounded-full bg-white/70 dark:bg-neutral-900/60 px-4 py-2 shadow-lg">
             <span className="text-sm font-semibold tracking-[0.2em] text-[#57574f] dark:text-[#f9f9f9]">Portfolio</span>
             <span className="h-2 w-2 rounded-full bg-[#a63e3e]"></span>
-            <span className="text-xs uppercase text-[#57574f]/70 dark:text-[#f9f9f9]/70">2025 Edition</span>
+            <span className="text-xs uppercase text-[#57574f]/70 dark:text-[#f9f9f9]/70">Open to Full-time Roles</span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight">
             Shreyash Dhage
-            <span className="block text-gradient">Digital Product Developer</span>
+            <span className="block text-gradient">Next.js Developer • Web3 Enthusiast</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto lg:mx-0">
-            Building immersive web experiences with <span className="font-semibold text-[#a63e3e] dark:text-[#a63e3e]">React, Next.js, and modern UI motion</span>.
-            I focus on thoughtful interaction design, performance, and storytelling through code.
+            Building scalable, responsive products with <span className="font-semibold text-[#a63e3e] dark:text-[#a63e3e]">Next.js, TypeScript, MongoDB, and REST APIs</span>.
+            I delivered 50+ features during internship sprints and now focus on high-performance UI, CMS workflows, and Web3-ready experiences.
           </p>
         </div>
 
@@ -106,20 +106,36 @@ const HeroSection = () => {
           ))}
         </div>
 
+
+        <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+          {[
+            '1+ Year Hands-on Experience',
+            '50+ Features Delivered',
+            'MCA 2025 Graduate',
+          ].map((item) => (
+            <span
+              key={item}
+              className="px-4 py-2 rounded-full bg-white/70 dark:bg-neutral-900/70 border border-[#57574f]/15 dark:border-[#f9f9f9]/15 text-sm font-medium text-[#57574f] dark:text-[#f9f9f9]"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
         <div className="overflow-hidden border-y border-[#57574f]/10 dark:border-[#f9f9f9]/10 py-4">
           <div className="hero-marquee animate-marquee">
-            <span>GSAP</span>
-            <span>Three.js</span>
-            <span>Framer Motion</span>
-            <span>Lottie</span>
-            <span>React</span>
-            <span>WebGL</span>
-            <span aria-hidden="true">GSAP</span>
-            <span aria-hidden="true">Three.js</span>
-            <span aria-hidden="true">Framer Motion</span>
-            <span aria-hidden="true">Lottie</span>
-            <span aria-hidden="true">React</span>
-            <span aria-hidden="true">WebGL</span>
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>MongoDB</span>
+            <span>REST APIs</span>
+            <span>Web3</span>
+            <span>CI/CD</span>
+            <span aria-hidden="true">Next.js</span>
+            <span aria-hidden="true">TypeScript</span>
+            <span aria-hidden="true">MongoDB</span>
+            <span aria-hidden="true">REST APIs</span>
+            <span aria-hidden="true">Web3</span>
+            <span aria-hidden="true">CI/CD</span>
           </div>
         </div>
 
