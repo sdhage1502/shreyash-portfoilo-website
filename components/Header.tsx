@@ -37,10 +37,10 @@ const Header: React.FC = () => {
           <a href="/" className={`nav-logo ${hasEntered ? 'in' : ''}`}>SD<span className="nav-dot">.</span></a>
           
           <div className={`nav-socials ${hasEntered ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
-            <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-icon">
+            <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-icon social-icon--github">
               <FaGithub />
             </a>
-            <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon">
+            <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon social-icon--linkedin">
               <FaLinkedinIn />
             </a>
           </div>
