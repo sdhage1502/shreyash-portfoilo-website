@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfoilo.shreyashdhage.in/sitemap.xml

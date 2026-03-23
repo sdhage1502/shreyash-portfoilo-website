@@ -1,0 +1,160 @@
+{
+  "educationData": [
+    {
+      "title": "Master of Computer Applications (MCA)",
+      "duration": "2023 - 2025",
+      "school": "JSPM's Jayawant Institute Of Management Studies, Pune",
+      "icon": "school",
+      "gpa": "7.5 CGPA"
+    },
+    {
+      "title": "Bachelor of Computer Applications (BCA)",
+      "duration": "2020 - 2023",
+      "school": "Vidhya Bharati Mahavidyalaya, Amravati",
+      "icon": "computer",
+      "gpa": "7.6 CGPA"
+    },
+    {
+      "title": "Senior Secondary (XII) in Science",
+      "duration": "2019 - 2020",
+      "school": "Y.C Junior College, Mangrulpir",
+      "icon": "science",
+      "gpa": "76%"
+    },
+    {
+      "title": "Secondary School (X)",
+      "duration": "2017 - 2018",
+      "school": "Y.C English High School, Mangrulpir",
+      "icon": "menu_book",
+      "gpa": "79.80%"
+    }
+  ],
+  "skillsData": [
+    {
+      "title": "Languages & Fundamentals",
+      "items": "JavaScript (ES6+), TypeScript, HTML5, CSS3, JSX",
+      "icon": "code",
+      "color": "from-[#a63e3e] to-[#57574f]",
+      "level": 90
+    },
+    {
+      "title": "Frontend Libraries",
+      "items": "React.js, Redux, Context API, Tailwind CSS, Bootstrap, ShadCN UI, React Query",
+      "icon": "web",
+      "color": "from-[#57574f] to-[#a63e3e]",
+      "level": 95
+    },
+    {
+      "title": "Backend/APIs",
+      "items": "Node.js, REST APIs, Spring Boot",
+      "icon": "api",
+      "color": "from-[#57574f] to-[#a63e3e]",
+      "level": 85
+    },
+    {
+      "title": "Databases",
+      "items": "Firebase Firestore, MySQL",
+      "icon": "storage",
+      "color": "from-[#a63e3e] to-[#57574f]",
+      "level": 80
+    },
+    {
+      "title": "Tools",
+      "items": "Git, GitHub, Postman, Chrome DevTools, Jest, React Testing Library, Vite, Webpack",
+      "icon": "build",
+      "color": "from-[#57574f] to-[#a63e3e]",
+      "level": 85
+    },
+    {
+      "title": "Development Tools",
+      "items": "Docker, VS Code, MySQL Workbench, Figma",
+      "icon": "settings",
+      "color": "from-[#a63e3e] to-[#57574f]",
+      "level": 88
+    },
+    {
+      "title": "Practices",
+      "items": "Agile/Scrum, CI/CD, Unit Testing, Cross-Browser Design, Responsive Design",
+      "icon": "menu_book",
+      "color": "from-[#57574f] to-[#a63e3e]",
+      "level": 92
+    },
+    {
+      "title": "Soft Skills",
+      "items": "Communication, Collaboration, Problem Solving, Logical Thinking",
+      "icon": "psychology",
+      "color": "from-[#57574f] to-[#a63e3e]",
+      "level": 95
+    }
+  ],
+  "experienceData": [
+    {
+      "title": "Next.js Developer Intern",
+      "company": "Meru Technosoft Pvt. Ltd.",
+      "duration": "Nov 2025 - Present",
+      "location": "Remote",
+      "achievements": [
+        {
+          "title": "Core Product",
+          "description": "I build and maintain the company's main product website — Next.js, TypeScript, Tailwind, fully responsive and SEO-optimized. On the same product I built the frontend platform: MongoDB handles the data, Azure Media Services handles video streaming."
+        },
+        {
+          "title": "Custom CMS",
+          "description": "I also built a custom CMS from scratch so the non-technical team can publish blog posts and manage SEO metadata without touching code. And I wrote the REST APIs that feed into n8n workflows for automated content distribution — cuts out a lot of manual work."
+        },
+        {
+          "title": "Day to day",
+          "description": "Agile, Git, GitHub, code reviews, continuous deployment."
+        }
+      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Azure Media Services", "REST API", "n8n", "CI/CD", "Git", "Agile"]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Hexadecimal Software Pvt. Ltd.",
+      "duration": "Sep 2024 - Apr 2025",
+      "location": "Remote",
+      "achievements": [
+        {
+          "title": "Frontend",
+          "description": "Built React components in TypeScript and Tailwind, wired up to REST APIs via NodeJS. Delivered 50+ features across Agile sprints. Deployment time dropped 90% after we set up proper CI/CD pipelines."
+        },
+        {
+          "title": "Performance Tracking",
+          "description": "Performance optimization with Chrome DevTools got us a 20% speed improvement. Wrote Jest unit tests across the codebase. Translated Figma designs into accessible, reusable components — 100% cross-device."
+        }
+      ],
+      "technologies": ["React", "TypeScript", "NodeJS", "Tailwind CSS", "MySQL", "Firebase", "Jest", "Webpack", "CI/CD", "Figma", "Chrome DevTools"]
+    }
+  ],
+  "projectsData": [
+    {
+      "title": "Decentralized Crowdfunding Platform",
+      "date": "(Dec 2024 - Present)",
+      "links": {
+        "live": "https://decentralized-crowdfunding-woad.vercel.app/",
+        "github": "https://github.com/sdhage1502/decentralized-crowdfunding"
+      },
+      "description": [
+        "A solo project. I built the full frontend for a blockchain-integrated crowdfunding app — MetaMask wallet connection via Ethers.js, real-time Firebase Firestore sync for dashboards, 40% performance gains from query optimization. Works across every device and browser.",
+        "Found cross-browser UI issues during testing and fixed them with Chrome DevTools — compatibility problems cut by 25%.",
+        "Stats: 40% faster · 100% cross-device · 25% fewer compat. bugs"
+      ],
+      "tags": ["Next.js", "React", "Tailwind CSS", "Ethers.js", "Firebase Firestore", "MetaMask", "TypeScript"]
+    },
+    {
+      "title": "Smart Weather Forecast App with AI Assistant",
+      "date": "(May 2024 - Present)",
+      "links": {
+        "live": "https://live-weather-dash-board.vercel.app/",
+        "github": "https://github.com/sdhage1502/Live-WeatherDashBoard"
+      },
+      "description": [
+        "A weather app with an AI chat layer on top. Pulls live data from OpenWeatherMap, caches recent searches in localStorage, and uses Meta LLaMA 3.3 via OpenRouter for contextual weather summaries and Q&A.",
+        "95 Lighthouse score. API response time cut 30% after Axios call optimization and proper caching. All AI responses validated with Postman — 100% reliability.",
+        "Stats: 95 Lighthouse · 30% faster API · 100% AI reliability"
+      ],
+      "tags": ["React", "TypeScript", "Vite", "Tailwind CSS", "OpenWeatherMap API", "Meta LLaMA 3.3", "OpenRouter", "React Context API", "Jest", "Axios"]
+    }
+  ]
+}
