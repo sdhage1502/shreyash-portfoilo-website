@@ -31,11 +31,11 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       'BUILDER',
       'PUNE',
     ];
-    const FADE_DURATION = 180;  
-    const HOLD_DURATION = 320;  
-    const GAP_DURATION = 60;   
-    const EXIT_DELAY = 380;  
-    const PANEL_DURATION = 1100;
+    const FADE_DURATION = 80;  
+    const HOLD_DURATION = 120;  
+    const GAP_DURATION = 30;   
+    const EXIT_DELAY = 100;  
+    const PANEL_DURATION = 600;
 
     const loader = document.getElementById('loader');
     const wordEl = document.getElementById('loader-word');

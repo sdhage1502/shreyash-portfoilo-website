@@ -7,14 +7,19 @@ import { contactInfo } from '../data/portfolioData';
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const [hasEntered, setHasEntered] = useState<boolean>(false);
 
   useEffect(() => {
+    const timer = setTimeout(() => setHasEntered(true), 100);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 60);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   const toggleDrawer = () => {
@@ -29,9 +34,9 @@ const Header: React.FC = () => {
     <>
       <header id="header" className={isScrolled ? 'scrolled' : ''}>
         <div className="header-left">
-          <a href="/" className="nav-logo">SD<span className="nav-dot">.</span></a>
+          <a href="/" className={`nav-logo ${hasEntered ? 'in' : ''}`}>SD<span className="nav-dot">.</span></a>
           
-          <div className="nav-socials">
+          <div className={`nav-socials ${hasEntered ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
             <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-icon">
               <FaGithub />
             </a>
@@ -42,19 +47,21 @@ const Header: React.FC = () => {
         </div>
 
         <nav className="nav-links" role="navigation" aria-label="Main navigation">
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="/resume">Resume</a>
-          <a href="#contact">Contact</a>
+          {['work', 'services', 'about', 'contact'].map((id, i) => (
+            <a key={id} href={`#${id}`} className={hasEntered ? 'in' : ''} style={{ transitionDelay: `${0.1 + i * 0.1}s` }}>
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
+          <a href="/resume" className={hasEntered ? 'in' : ''} style={{ transitionDelay: '0.5s' }}>Resume</a>
         </nav>
 
         <div className="header-right">
           <a href="https://cal.com/shreyash_15"
              target="_blank" rel="noopener noreferrer"
-             className="nav-cta magnetic hidden md:flex">
+             className={`nav-cta magnetic ${hasEntered ? 'in' : ''}`}
+             style={{ transitionDelay: '0.6s' }}>
             <span className="nav-cta-dot" aria-hidden="true"></span>
-            Book a Call
+            <span className="nav-cta-text">Book a Call</span>
           </a>
 
           <button 
@@ -71,16 +78,42 @@ const Header: React.FC = () => {
       </header>
 
       <div className={`nav-drawer ${isDrawerOpen ? 'open' : ''}`} aria-hidden={!isDrawerOpen}>
-        <a href="#work" onClick={closeDrawer}>Work</a>
-        <a href="#services" onClick={closeDrawer}>Services</a>
-        <a href="#about" onClick={closeDrawer}>About</a>
-        <a href="/resume" onClick={closeDrawer}>Resume</a>
-        <a href="#contact" onClick={closeDrawer}>Contact</a>
+        {['work', 'services', 'about', 'contact'].map((id, i) => (
+          <a 
+            key={id} 
+            href={`#${id}`} 
+            onClick={closeDrawer}
+            style={{ 
+              transitionDelay: isDrawerOpen ? `${0.2 + i * 0.1}s` : '0s',
+              opacity: isDrawerOpen ? 1 : 0,
+              transform: isDrawerOpen ? 'translateY(0)' : 'translateY(20px)'
+            }}
+          >
+            {id.charAt(0).toUpperCase() + id.slice(1)}
+          </a>
+        ))}
+        <a 
+          href="/resume" 
+          onClick={closeDrawer}
+          style={{ 
+            transitionDelay: isDrawerOpen ? '0.6s' : '0s',
+            opacity: isDrawerOpen ? 1 : 0,
+            transform: isDrawerOpen ? 'translateY(0)' : 'translateY(20px)'
+          }}
+        >
+          Resume
+        </a>
         <a href="https://cal.com/shreyash_15" 
            target="_blank" 
            rel="noopener noreferrer" 
            className="drawer-cta"
-           onClick={closeDrawer}>
+           onClick={closeDrawer}
+           style={{ 
+             transitionDelay: isDrawerOpen ? '0.7s' : '0s',
+             opacity: isDrawerOpen ? 1 : 0,
+             transform: isDrawerOpen ? 'translateY(0)' : 'translateY(20px)'
+           }}
+        >
           Book a Call
         </a>
       </div>
