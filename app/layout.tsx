@@ -50,7 +50,7 @@ const jsonLd = {
   "email": "sdhage1502@gmail.com",
   "url": "https://portfoilo.shreyashdhage.in",
   "sameAs": [
-    "https://github.com/shreyashdhage", // Placeholder: user should update or I keep
+    "https://github.com/sdhage1502", // Placeholder: user should update or I keep
     "https://linkedin.com/in/shreyashdhage"
   ],
   "address": {
