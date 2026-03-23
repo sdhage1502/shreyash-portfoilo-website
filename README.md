@@ -1,13 +1,29 @@
-# React + Vite
+# Shreyash Dhage — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic, high-performance portfolio website built with:
+- **Framework**: Next.js 15+ (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion, Lenis Scroll, Three.js
+- **CMS & Automation**: n8n, Custom CMS, Azure Media Services
+- **AI Integrations**: MCP Servers, AI-assisted development
 
-Currently, two official plugins are available:
+## Getting Started
 
+1.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2.  Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-## Expanding the ESLint configuration
+3.  Build for production:
+    ```bash
+    npm run build
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development
+
+This project uses modern AI-assisted development practices and integrates with MCP servers for advanced tool-calling and automation.
