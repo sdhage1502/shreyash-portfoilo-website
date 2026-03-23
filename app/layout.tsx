@@ -40,6 +40,11 @@ export const metadata = {
     description: 'Next.js · TypeScript · n8n · MCP Servers · Firebase · Pune',
     images: ['https://portfoilo.shreyashdhage.in/og-image.png'],
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 const jsonLd = {

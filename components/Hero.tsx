@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import FloatingLines from './FloatingLines';
+import dynamic from 'next/dynamic';
+
+const FloatingLines = dynamic(() => import('./FloatingLines'), { ssr: false });
 
 declare global {
   interface Window {
