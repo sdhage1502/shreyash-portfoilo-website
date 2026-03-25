@@ -158,7 +158,7 @@ export const projects = [
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Ethers.js', 'Firebase Firestore', 'MetaMask'],
     description: "Solo project. Full frontend for a blockchain crowdfunding app — MetaMask wallet connect via Ethers.js, real-time Firestore sync for live dashboards, 40% perf gains from query optimization. Fixed cross-browser UI issues with Chrome DevTools — compatibility problems cut 25%.",
     image: '/images/project-1.png',
-    link: 'https://github.com/shreyashdhage'
+    link: 'https://defund.shreyashdhage.in/'
   },
   {
     id: '02',
@@ -169,7 +169,7 @@ export const projects = [
     stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'OpenWeatherMap API', 'Meta LLaMA 3.3', 'OpenRouter', 'Axios', 'Jest'],
     description: "Weather app with an AI chat layer. Live data from OpenWeatherMap, localStorage caching, Meta LLaMA 3.3 via OpenRouter for contextual summaries and Q&A. 95 Lighthouse score. Response time cut 30% after Axios optimization and proper caching.",
     image: '/images/project-2.png',
-    link: 'https://github.com/shreyashdhage'
+    link: 'https://live-weather-dash-board.vercel.app/'
   },
   {
     id: '03',
