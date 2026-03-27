@@ -1,0 +1,39 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg_grad" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0B0D"/>
+      <stop offset="1" stop-color="#14161B"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="accent_grad" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CD974F"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#bg_grad)"/>
+  
+  <!-- Subtle Decorative Grid -->
+  <g opacity="0.05" stroke="white" stroke-width="0.5">
+    <path d="M0 100 H1200 M0 200 H1200 M0 300 H1200 M0 400 H1200 M0 500 H1200 M0 600 H1200 M0 700 H1200"/>
+    <path d="M100 0 V800 M200 0 V800 M300 0 V800 M400 0 V800 M500 0 V800 M600 0 V800 M700 0 V800 M800 0 V800 M900 0 V800 M1000 0 V800 M1100 0 V800"/>
+  </g>
+
+  <!-- Payload CMS Stylized Logo (Modern 'P') -->
+  <g transform="translate(600, 360)" filter="url(#glow)">
+    <!-- Central P Shape - Stylized as two blocks like official logo -->
+    <path d="M-100 -120 V120 H-40 V-120 H-100Z" fill="white" fill-opacity="0.95"/>
+    <path d="M-30 -120 C40 -120 100 -60 100 0 C100 60 40 120 -30 120 V60 C10 60 40 30 40 0 C40 -30 10 -60 -30 -60 V-120Z" fill="#CD974F"/>
+  </g>
+  
+  <!-- Text Elements -->
+  <text x="600" y="580" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="64" fill="white" letter-spacing="-1">PAYLOAD CMS</text>
+  <text x="600" y="640" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-weight="400" font-size="24" fill="white" fill-opacity="0.4" letter-spacing="8">HEADLESS CONTENT PLATFORM</text>
+  
+  <!-- Bottom Accent Line -->
+  <rect x="500" y="680" width="200" height="2" fill="#CD974F" fill-opacity="0.5"/>
+
+</svg>

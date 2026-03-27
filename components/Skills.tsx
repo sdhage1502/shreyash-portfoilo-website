@@ -37,7 +37,7 @@ const Skills: React.FC = () => {
             >
               <h3 className="text-xl font-bold text-white tracking-tight flex items-center justify-between">
                 {skill.title}
-                <span className="text-[10px] font-mono text-white/20 uppercase tracking-widest">{skill.category}</span>
+                {/* <span className="text-[10px] font-mono text-white/20 uppercase tracking-widest">{skill.category}</span> */}
               </h3>
               
               <div className="flex flex-wrap gap-2 mt-auto">

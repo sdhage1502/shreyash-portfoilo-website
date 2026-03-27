@@ -161,7 +161,18 @@ export const projects = [
     link: 'https://defund.shreyashdhage.in/'
   },
   {
-    id: '02',
+  id: '02',
+  title: 'Crypto Dashboard',
+  category: 'Blockchain · Web3 · TypeScript',
+  status: 'Live · Aug 2025 – Present',
+  stats: { speed: 'Optimized performance', responsiveness: '100% cross-device', reliability: 'Production-ready' },
+  stack: ['TypeScript', 'Next.js','Axios', 'React 18','Tailwind CSS v3','React Hot Toast','Vercel'],
+  description: "Real-time cryptocurrency tracking dashboard. Built with TypeScript and Next.js for type-safe development. Deployed on Vercel with optimized performance and responsive design across all devices.",
+  image: '/images/project-3.png',
+  link: 'https://crypto-dashboard-inky-one.vercel.app'
+},
+  {
+    id: '03',
     title: 'Smart Weather + AI Assistant',
     category: 'AI · React · API Integration',
     status: 'Live · May 2024 – Present',
@@ -172,14 +183,14 @@ export const projects = [
     link: 'https://live-weather-dash-board.vercel.app/'
   },
   {
-    id: '03',
-    title: 'Product CMS + Automation Platform',
+    id: '04',
+    title: 'Payload CMS + Automation Platform',
     category: 'CMS · Next.js · Automation',
     status: 'Live · Nov 2025 – Present',
-    stats: { speed: '0 manual steps', responsiveness: 'n8n', reliability: 'Azure' },
-    stack: ['Next.js', 'TypeScript', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n', 'Tailwind CSS'],
-    description: "Built at Meru Technosoft. Custom CMS so non-technical team members publish blog posts, update SEO metadata, and manage media — no code. REST APIs feed n8n automation workflows for scheduled publishing and cross-platform content distribution.",
-    image: '/images/project-3.png',
+    stats: { speed: '0 manual steps', responsiveness: 'Payload CMS', reliability: 'Azure' },
+    stack: ['Payload CMS', 'Next.js', 'TypeScript', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n'],
+    description: "Built at Meru Technosoft. A premium content platform leveraging Payload CMS for headless management. REST APIs feed n8n automation workflows for scheduled publishing and cross-platform content distribution.",
+    image: '/images/project-4.svg',
     isPrivate: true // Show "Private Project" badge instead of link
   }
 ];

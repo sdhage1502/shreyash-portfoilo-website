@@ -518,18 +518,7 @@
 .service-card--purple { border-top: 3px solid #7C3AED; }
 .service-card--blue { border-top: 3px solid #2563EB; }
 
-/* ── Components: Marquee ───────────────────────────── */
-.marquee-content {
-  display: flex;
-  white-space: nowrap;
-  gap: 4rem;
-  padding: 3.5rem 0;
-  animation: scroll-left 45s linear infinite;
-}
-@keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* Marquee handled by Framer Motion in components */
 
 /* ── Custom Cursor ─────────────────────────────────── */
 .cursor {
