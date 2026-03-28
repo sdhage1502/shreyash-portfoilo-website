@@ -1,6 +1,7 @@
 import './globals.css';
 import Script from 'next/script';
 import FloatingBackground from '../components/FloatingBackground';
+import ClaritySnippet from '../components/Clarity';
 
 export const metadata = {
   metadataBase: new URL('https://portfoilo.shreyashdhage.in'),
@@ -78,6 +79,8 @@ const jsonLd = {
   }
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -95,6 +98,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning className="bg-[#080808] text-white">
+        <ClaritySnippet />
         <FloatingBackground />
         <div id="scroll-bar" />
         {/* Custom Cursor for Desktop Only */}

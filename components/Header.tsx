@@ -33,10 +33,10 @@ const Header: React.FC = () => {
   return (
     <>
       <header id="header" className={isScrolled ? 'scrolled' : ''}>
-        <div className="header-left">
+        <div className="header-left flex items-center gap-4 md:gap-8">
           <a href="/" className={`nav-logo ${hasEntered ? 'in' : ''}`}>SD<span className="nav-dot">.</span></a>
           
-          <div className={`nav-socials ${hasEntered ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          <div className={`nav-socials hidden lg:flex ${hasEntered ? 'in' : ''}`} style={{ transitionDelay: '0.2s' }}>
             <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-icon social-icon--github">
               <FaGithub />
             </a>
@@ -55,10 +55,10 @@ const Header: React.FC = () => {
           <a href="/resume" className={hasEntered ? 'in' : ''} style={{ transitionDelay: '0.5s' }}>Resume</a>
         </nav>
 
-        <div className="header-right">
+        <div className="header-right flex items-center gap-3 md:gap-6">
           <a href="https://cal.com/shreyash_15"
              target="_blank" rel="noopener noreferrer"
-             className={`nav-cta magnetic ${hasEntered ? 'in' : ''}`}
+             className={`nav-cta magnetic hidden xs:flex ${hasEntered ? 'in' : ''}`}
              style={{ transitionDelay: '0.6s' }}>
             <span className="nav-cta-dot" aria-hidden="true"></span>
             <span className="nav-cta-text">Book a Call</span>
@@ -116,6 +116,20 @@ const Header: React.FC = () => {
         >
           Book a Call
         </a>
+
+        {/* Drawer Socials */}
+        <div className="flex gap-10 mt-6" style={{ 
+             transitionDelay: isDrawerOpen ? '0.8s' : '0s',
+             opacity: isDrawerOpen ? 1 : 0,
+             transform: isDrawerOpen ? 'translateY(0)' : 'translateY(20px)'
+           }}>
+          <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-3xl text-white/40 hover:text-[var(--accent)] transition-colors">
+            <FaGithub />
+          </a>
+          <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-3xl text-white/40 hover:text-[var(--accent)] transition-colors">
+            <FaLinkedinIn />
+          </a>
+        </div>
       </div>
     </>
   );

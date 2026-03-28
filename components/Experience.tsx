@@ -8,11 +8,12 @@ const Experience: React.FC = () => {
     <section id="work" className="py-[clamp(5rem,10vw,10rem)] relative overflow-hidden bg-black/20">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
-        <div className="reveal mb-[clamp(3rem,6vw,5rem)]">
+        <div className="reveal mb-12 lg:mb-20">
           <p className="section-label">03 · Experience</p>
-          <h2 className="section-heading">
-            Building Real Products<br />Expertly.
-          </h2>
+          <h2 className="section-heading">Professional History</h2>
+          <p className="text-lg font-light text-white/50 max-w-[500px] mt-6">
+            Building high-performance digital products and automated architectures.
+          </p>
         </div>
 
         <div className="flex flex-col gap-12 lg:gap-24">
@@ -47,7 +48,7 @@ const Experience: React.FC = () => {
                   {exp.tags.map((tag, j) => (
                     <span 
                       key={j} 
-                      className="px-4 py-2 bg-white/[0.03] border border-white/5 rounded-full text-[12px] font-mono text-white/40 group-hover:border-white/20 group-hover:text-white/60 transition-all duration-300"
+                      className="px-3 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-[10px] font-mono tracking-widest text-white/40 group-hover:border-white/20 group-hover:text-white/60 transition-all duration-300"
                     >
                       {tag}
                     </span>

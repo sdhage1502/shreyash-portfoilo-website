@@ -8,11 +8,9 @@ const About: React.FC = () => {
     <section id="about" className="py-[clamp(5rem,10vw,10rem)] relative overflow-hidden">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
-        <div className="reveal mb-[clamp(3rem,6vw,5rem)]">
+        <div className="reveal mb-12 lg:mb-24">
           <p className="section-label">01 · About Me</p>
-          <h2 className="section-heading">
-            I build product websites<br className="hidden md:block"/> that ship.
-          </h2>
+          <h2 className="section-heading">Engineer <span className="text-[var(--accent)]">&</span> Builder</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2rem,5vw,6rem)] items-start">
@@ -31,11 +29,11 @@ const About: React.FC = () => {
             {/* Stats Row */}
             <div className="grid grid-cols-2 gap-4 mt-8">
               {stats.map((stat, i) => (
-                <div key={i} className="p-6 bg-white/[0.03] border border-white/5 rounded-xl">
-                  <div className="text-[28px] font-extrabold text-[#C8FF00] tracking-tight">
+                <div key={i} className="p-6 bg-white/[0.03] border border-white/10 rounded-sm">
+                  <div className="text-3xl font-extrabold text-[var(--accent)] tracking-tighter">
                     {stat.value}{stat.suffix}
                   </div>
-                  <div className="text-[11px] font-mono uppercase tracking-[0.15em] text-white/40 mt-1">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40 mt-2">
                     {stat.label}
                   </div>
                 </div>

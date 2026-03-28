@@ -55,48 +55,42 @@ const Hero: React.FC = () => {
       </div>
       <div className="max-w-[var(--container-max)] mx-auto w-full relative z-[2] hero-content">
         
-        <h1 className="hero-name text-[clamp(48px,10vw,140px)] sm:text-7xl md:text-8xl lg:text-[120px] xl:text-[140px] 2xl:text-[160px] font-extrabold leading-[0.85] tracking-[-0.05em] mb-6 sm:mb-8 md:mb-10 xl:mb-12">
+        <h1 className="hero-name text-[clamp(2.5rem,12vw,10.5rem)] font-extrabold leading-[0.82] tracking-[-0.06em] mb-8 sm:mb-10 lg:mb-12">
           <span className="word">Shreyash</span>
           <br className="md:hidden" />
-          <span className="word ml-0 md:ml-4 lg:ml-6">Dhage</span>
+          <span className="word ml-0 md:ml-6 lg:ml-8">Dhage</span>
         </h1>
 
-        <p className="hero-tagline text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[32px] font-medium leading-[1.3] text-white/90 max-w-[90%] sm:max-w-[800px] lg:max-w-[900px] xl:max-w-[1000px] mb-6 sm:mb-8 md:mb-10">
-          Next.js developer who builds fast, SEO-optimized web apps —
-          with AI tools, n8n automation, and MCP integration built in.
+        <p className="hero-tagline text-lg sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] text-white/90 max-w-[900px] mb-8 sm:mb-10 lg:mb-14 xl:mb-16">
+          Next.js developer building <span className="text-[var(--accent)]">high-performance</span> systems with integrated AI automation.
         </p>
 
         {/* Keyword pills — visible to users AND search bots */}
-        <div className="hero-keywords flex flex-wrap items-center gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-10 lg:mb-12">
-          <span className="hero-kw text-xs sm:text-sm">Next.js</span>
-          <span className="hero-kw-sep hidden sm:inline">·</span>
-          <span className="hero-kw text-xs sm:text-sm">TypeScript</span>
-          <span className="hero-kw-sep hidden sm:inline">·</span>
-          <span className="hero-kw text-xs sm:text-sm">AI-Assisted Dev</span>
-          <span className="hero-kw-sep hidden md:inline">·</span>
-          <span className="hero-kw text-xs sm:text-sm">n8n Automation</span>
-          <span className="hero-kw-sep hidden lg:inline">·</span>
-          <span className="hero-kw text-xs sm:text-sm">MCP Servers</span>
-          <span className="hero-kw-sep hidden xl:inline">·</span>
-          <span className="hero-kw text-xs sm:text-sm">Firebase</span>
-          <span className="hero-kw-sep hidden xl:inline">·</span>
-          <span className="hero-kw text-xs sm:text-sm">SEO Ready</span>
+        <div className="hero-keywords flex flex-wrap items-center gap-3 sm:gap-4 lg:gap-5 mb-10 sm:mb-12 lg:mb-16">
+          {['Next.js', 'TypeScript', 'AI-Assisted Dev', 'n8n Automation', 'MCP Servers', 'Firebase', 'SEO Ready'].map((kw, i) => (
+            <React.Fragment key={kw}>
+              <span className="hero-kw px-4 py-2 border border-white/10 rounded-sm text-[10px] font-mono tracking-widest text-white/40 hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors cursor-default">
+                {kw}
+              </span>
+              {i < 6 && <span className="hero-kw-sep opacity-20 hidden md:inline">/</span>}
+            </React.Fragment>
+          ))}
         </div>
 
-        <p className="hero-body text-sm sm:text-base md:text-lg lg:text-xl font-light leading-[1.65] text-white/50 max-w-full sm:max-w-[640px] md:max-w-[720px] lg:max-w-[800px] mb-10 sm:mb-12 lg:mb-16">
+        <p className="hero-body text-sm sm:text-base md:text-lg lg:text-xl font-light leading-[1.65] text-white/50 max-w-[540px] md:max-w-[720px] lg:max-w-[800px] mb-10 sm:mb-12 lg:mb-16">
           Next.js developer from Pune. 1+ year in production.<br className="hidden sm:block" />
           I build product websites, custom CMSs, and AI-powered tools —
           using modern AI development practices, n8n for automation,
           and Firebase for backend. SEO and GA4 built in from day one.
         </p>
 
-        <div className="hero-ctas flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 items-start sm:items-center w-full sm:w-auto">
+        <div className="hero-ctas flex flex-col sm:flex-row gap-4 sm:gap-6 items-stretch sm:items-center w-full sm:w-auto">
           <a href="https://cal.com/shreyash_15"
              target="_blank" rel="noopener noreferrer"
-             className="cta-primary magnetic w-full sm:w-auto text-center touch-manipulation min-h-[48px] px-8 sm:px-10 py-3 sm:py-4">
+             className="cta-primary magnetic text-center touch-manipulation min-h-[48px] px-8 sm:px-10 py-3.5 sm:py-4">
             Book a Free Call
           </a>
-          <a href="#work" className="cta-secondary magnetic w-full sm:w-auto text-center touch-manipulation min-h-[48px] px-8 sm:px-10 py-3 sm:py-4 mt-2 sm:mt-0">
+          <a href="#work" className="cta-secondary magnetic text-center touch-manipulation min-h-[48px] px-8 sm:px-10 py-3.5 sm:py-4">
             View My Work ↓
           </a>
         </div>

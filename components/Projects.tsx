@@ -32,18 +32,16 @@ const Projects: React.FC = () => {
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
         {/* Section header */}
-        <div className="reveal mb-[clamp(4rem,8vw,8rem)]">
-          <p className="section-label">04 · Selected Work</p>
-          <h2 className="section-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] font-black text-white leading-tight tracking-[-0.03em] mb-4 sm:mb-6">
-            Things I&apos;ve shipped.
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl font-light text-white/50 max-w-full sm:max-w-[600px] leading-relaxed">
-            From blockchain backends to AI assistants — real metrics, real users, clean code.
+        <div className="reveal mb-12 lg:mb-20">
+          <p className="section-label">Selected Work</p>
+          <h2 className="section-heading">Featured Projects</h2>
+          <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
+            From blockchain backends to AI assistants — real metrics, real users, clean architecture.
           </p>
         </div>
 
         {/* Projects list */}
-        <div className="projects-list flex flex-col gap-[clamp(6rem,12vw,12rem)]">
+        <div className="projects-list flex flex-col gap-16 md:gap-24 lg:gap-32">
           {projects.map((project, i) => (
             <article 
               key={project.id} 
@@ -58,7 +56,7 @@ const Projects: React.FC = () => {
               }`}>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <span className="text-[14px] font-mono text-white/20">[{project.id}]</span>
-                  <span className="text-[12px] font-bold text-[#C8FF00] tracking-widest uppercase">{project.category}</span>
+                  <span className="text-[10px] sm:text-[12px] font-bold text-[#C8FF00] tracking-widest uppercase">{project.category}</span>
                 </div>
 
                 <h3 className="text-[clamp(28px,3.5vw,48px)] font-extrabold text-white leading-[1.1] tracking-[-0.04em]">
@@ -70,34 +68,34 @@ const Projects: React.FC = () => {
                 </p>
 
                 {/* Stats Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 lg:gap-6 py-6 sm:py-8 border-y border-white/5">
+                <div className="grid grid-cols-1 xs:grid-cols-3 gap-6 sm:gap-4 lg:gap-6 py-6 sm:py-8 border-y border-white/5">
                   <div className="flex flex-col gap-1">
                     <span className="text-xl lg:text-[20px] font-bold text-white tracking-tight">{project.stats.speed}</span>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">Performance</span>
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/30">Performance</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-xl lg:text-[20px] font-bold text-white tracking-tight">{project.stats.responsiveness}</span>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">UI / Core</span>
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/30">UI / Core</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-xl lg:text-[20px] font-bold text-white tracking-tight">{project.stats.reliability}</span>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">Stability</span>
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/30">Stability</span>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map(tech => (
-                    <span key={tech} className="px-3 py-1 bg-white/[0.03] border border-white/5 rounded-full text-[11px] sm:text-[12px] font-mono text-white/40">{tech}</span>
+                    <span key={tech} className="px-3 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-[10px] font-mono tracking-widest text-white/40">{tech}</span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-6 mt-2 sm:mt-4 w-full sm:w-auto">
+                <div className="flex items-center gap-6 mt-4 w-full sm:w-auto">
                   {!project.isPrivate ? (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="magnetic cta-primary w-full sm:w-auto text-center touch-manipulation min-h-[48px]">
-                      View Project ↗
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-3.5">
+                      View Project
                     </a>
                   ) : (
-                    <span className="w-full sm:w-auto text-center px-5 py-3 rounded-full border border-white/10 text-white/30 text-[13px] font-bold tracking-widest uppercase">
+                    <span className="w-full sm:w-auto text-center px-8 py-3.5 rounded-sm border border-white/10 text-white/20 text-[10px] font-mono tracking-widest uppercase">
                       Private Project
                     </span>
                   )}

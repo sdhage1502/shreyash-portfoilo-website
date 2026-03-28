@@ -7,33 +7,30 @@ const Services: React.FC = () => {
     <section id="services" aria-label="Services" className="py-[clamp(5rem,10vw,10rem)]">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
-        <div className="reveal mb-[clamp(3rem,6vw,5rem)]">
-          <p className="text-[11px] font-mono tracking-[0.2em] uppercase text-white/40 mb-4 inline-block border-b border-white/10 pb-1">
-            What I Build
-          </p>
-          <h2 className="text-[clamp(32px,5vw,64px)] font-extrabold tracking-[-0.03em] text-white mb-6">
-            Services
-          </h2>
-          <p className="text-[clamp(16px,1.2vw,20px)] font-light text-white/50 max-w-[600px] leading-relaxed">
-            What clients hire me for — delivered with SEO, performance, and clean code.
+        <div className="reveal mb-12 lg:mb-20">
+          <p className="section-label">What I Build</p>
+          <h2 className="section-heading">Services</h2>
+          <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
+            High-performance solutions delivered with SEO, automation, and clean architecture.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
           {/* Card 1 */}
-          <div className="service-card reveal">
-            <div className="service-icon mb-4">🌐</div>
-            <h3 className="service-title mb-3">Product Websites & Landing Pages</h3>
-            <p className="service-desc mb-6">
-              Fast, responsive product websites in Next.js and Tailwind.
-              SEO-optimized from day one — meta tags, structured data, GA4,
-              Google Search Console, Lighthouse above 90. Built with AI tools
-              to keep delivery fast.
-            </p>
-            <div className="service-tags">
+          <div className="service-card reveal flex flex-col h-full">
+            <div className="flex-grow">
+              <div className="service-icon mb-4">🌐</div>
+              <h3 className="service-title mb-3">Product Websites</h3>
+              <p className="service-desc mb-6">
+                Fast, responsive product websites in Next.js and Tailwind.
+                SEO-optimized from day one — meta tags, structured data, GA4,
+                Google Search Console, Lighthouse above 90.
+              </p>
+            </div>
+            <div className="service-tags mt-auto pt-4">
               <span>Next.js</span><span>Tailwind CSS</span>
-              <span>SEO</span><span>GA4</span><span>Lighthouse 90+</span>
+              <span>SEO</span><span>GA4</span>
             </div>
           </div>
 
@@ -98,17 +95,15 @@ const Services: React.FC = () => {
           </div>
 
           {/* Card 6 (CTA) */}
-          <div className="service-card service-card--cta reveal flex flex-col items-center justify-center text-center p-10 border-dashed">
-            <p className="text-[11px] font-mono tracking-[0.2em] uppercase text-white/40 mb-3">
-              Have a project?
-            </p>
-            <h3 className="text-[28px] font-extrabold tracking-[-0.04em] text-white leading-tight mb-6">
+          <div className="service-card reveal flex flex-col items-center justify-center text-center p-8 sm:p-10 border-dashed border-white/20 bg-white/[0.02] min-h-[320px]">
+            <p className="section-label !mb-3 !before:hidden mx-auto">Have a project?</p>
+            <h3 className="text-2xl font-extrabold tracking-[-0.04em] text-white leading-tight mb-8">
               Let's build something.
             </h3>
             <a href="https://cal.com/shreyash_15"
                target="_blank" rel="noopener noreferrer"
-               className="service-cta-btn magnetic inline-flex justify-center items-center gap-2 bg-[#C8FF00] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base w-full sm:w-auto touch-manipulation min-h-[48px] transition-transform hover:scale-105">
-              Book a Free Call ↗
+               className="cta-primary magnetic w-full py-4">
+              Book a Free Call
             </a>
           </div>
 

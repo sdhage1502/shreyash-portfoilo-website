@@ -8,12 +8,12 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-[clamp(6rem,15vw,15rem)] relative overflow-hidden">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)] text-center">
         
-        <div className="reveal mb-16">
-          <p className="section-label mb-6">06 · Get in Touch</p>
-          <h2 className="text-[clamp(42px,7vw,96px)] font-black text-white leading-tight tracking-[-0.04em] mb-4">
-            {contactInfo.heading}
+        <div className="reveal mb-12 lg:mb-20">
+          <p className="section-label mx-auto before:left-1/2 before:-translate-x-1/2">06 · Get in Touch</p>
+          <h2 className="section-heading mb-8">
+            Let's build <span className="text-[var(--accent)]">it.</span>
           </h2>
-          <p className="text-[clamp(16px,1.2vw,20px)] font-light text-white/40">
+          <p className="text-lg font-light text-white/40 max-w-[600px] mx-auto">
             {contactInfo.sub}
           </p>
         </div>
@@ -21,14 +21,14 @@ const Contact: React.FC = () => {
         <div className="reveal flex flex-col items-center gap-12">
           <a 
             href={`mailto:${contactInfo.email}`}
-            className="text-[clamp(20px,4.5vw,64px)] font-extrabold text-white underline decoration-white/10 hover:decoration-[#C8FF00] underline-offset-[12px] transition-all duration-500 magnetic"
+            className="text-[clamp(1.25rem,4.5vw,4rem)] font-extrabold text-white underline decoration-white/10 hover:decoration-[#C8FF00] underline-offset-[12px] transition-all duration-500 magnetic break-all px-4"
           >
             {contactInfo.email}
           </a>
 
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-12 w-full sm:w-auto">
-            <a href={contactInfo.cal} target="_blank" rel="noopener noreferrer" className="magnetic cta-primary text-center text-lg px-10 py-5 w-full sm:w-auto touch-manipulation min-h-[48px] flex items-center justify-center">
-              Book a Free Call ↗
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-12 w-full sm:w-auto px-6">
+            <a href={contactInfo.cal} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-4">
+              Book a Free Call
             </a>
           </div>
 

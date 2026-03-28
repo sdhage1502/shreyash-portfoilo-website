@@ -33,36 +33,17 @@ const Process: React.FC = () => {
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)] relative z-10">
         
         {/* Compact, Clean Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
-          <div className="max-w-[500px]">
-             <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-[#C8FF00] font-mono text-[9px] md:text-[10px] tracking-[0.4em] uppercase mb-4"
-            >
-              05 · THE WORKFLOW
-            </motion.p>
-            <motion.h2 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-black italic tracking-tight text-white uppercase leading-none"
-            >
-              Streamlined <br/><span className="text-[#C8FF00]/40">Production.</span>
-            </motion.h2>
-          </div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-[13px] md:text-[14px] font-medium text-white/30 max-w-[280px] leading-relaxed italic border-l border-white/10 pl-6 h-max"
-          >
-            "High-performance architecture delivered through a disciplined, minimal phase-based pipeline."
-          </motion.div>
+        <div className="reveal mb-12 lg:mb-20">
+          <p className="section-label">The Workflow</p>
+          <h2 className="section-heading">Pipeline <span className="text-[var(--accent)]">&</span> Process</h2>
+          <p className="text-lg font-light text-white/50 max-w-[600px] mt-6">
+            A disciplined, phase-based pipeline focused on performance and industrial-grade quality.
+          </p>
         </div>
 
         {/* ── Minimal Phase Steppers with Proper Icons ─────── */}
         
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 sm:gap-y-16">
           
           {/* Background Connecting Line (Desktop) */}
           <div className="hidden lg:block absolute top-[28px] left-[5%] right-[5%] h-[1px] bg-white/[0.05] pointer-events-none" />
@@ -94,13 +75,13 @@ const Process: React.FC = () => {
                   {step.title}
                 </h3>
                 
-                <p className="text-[13px] md:text-[14px] font-medium leading-[1.6] text-white/30 group-hover:text-white/50 transition-colors duration-500 max-w-[240px]">
+                <p className="text-[13px] md:text-[14px] font-medium leading-[1.6] text-white/30 group-hover:text-white/50 transition-colors duration-500 max-w-[280px]">
                   {step.desc}
                 </p>
 
                 <div className="mt-10 flex items-center gap-3 opacity-[0.05] group-hover:opacity-100 transition-all duration-700 translate-y-2 group-hover:translate-y-0">
-                  <div className="flex items-center gap-2 px-2.5 py-1 bg-white/[0.02] border border-white/[0.08] backdrop-blur-md transition-all group-hover:border-[#C8FF00]/20 group-hover:bg-[#C8FF00]/5">
-                    <span className="font-mono text-[8px] md:text-[9px] text-[#C8FF00] font-black tracking-[0.25em] whitespace-nowrap">PHASE_0{i + 1}</span>
+                  <div className="flex items-center gap-2 px-2.5 py-1 bg-white/[0.02] border border-white/10 rounded-sm backdrop-blur-md transition-all group-hover:border-[#C8FF00]/20 group-hover:bg-[#C8FF00]/5">
+                    <span className="font-mono text-[9px] text-[var(--accent)] font-black tracking-[0.25em] whitespace-nowrap">PHASE_0{i + 1}</span>
                   </div>
                   <div className="w-8 h-[1px] bg-gradient-to-r from-[#C8FF00]/30 to-transparent" />
                 </div>
