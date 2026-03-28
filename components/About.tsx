@@ -1,6 +1,5 @@
-'use client';
-
 import React from 'react';
+import Image from 'next/image';
 import { aboutCopy, stats } from '../data/portfolioData';
 
 const About: React.FC = () => {
@@ -10,7 +9,7 @@ const About: React.FC = () => {
         
         <div className="reveal mb-12 lg:mb-24">
           <p className="section-label">01 · About Me</p>
-          <h2 className="section-heading">Engineer <span className="text-[var(--accent)]">&</span> Builder</h2>
+          <h2 className="section-heading">Next.js Expert <span className="text-[var(--accent)]">&</span> AI Automation Builder</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2rem,5vw,6rem)] items-start">
@@ -18,9 +17,11 @@ const About: React.FC = () => {
           {/* Left: Image / Branding */}
           <div className="lg:col-span-5 reveal relative">
             <div className="overflow-hidden rounded-2xl relative aspect-[4/5] group bg-white/5 border border-white/10">
-              <img 
+              <Image 
                 src="/images/profile.png" 
-                alt="Shreyash Dhage" 
+                alt="Shreyash Dhage — Next.js Developer Pune" 
+                fill
+                priority
                 className="w-full h-full object-cover scale-[1.1] transition-transform duration-1000 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080808] to-transparent opacity-60"></div>

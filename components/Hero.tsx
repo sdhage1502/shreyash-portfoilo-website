@@ -59,6 +59,7 @@ const Hero: React.FC = () => {
           <span className="word">Shreyash</span>
           <br className="md:hidden" />
           <span className="word ml-0 md:ml-6 lg:ml-8">Dhage</span>
+          <span className="sr-only"> — Next.js Developer & AI Automation Specialist</span>
         </h1>
 
         <p className="hero-tagline text-lg sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] text-white/90 max-w-[900px] mb-8 sm:mb-10 lg:mb-14 xl:mb-16">

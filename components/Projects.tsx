@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
+import Image from 'next/image';
 import { projects } from '../data/portfolioData';
 
 const Projects: React.FC = () => {
@@ -34,7 +35,7 @@ const Projects: React.FC = () => {
         {/* Section header */}
         <div className="reveal mb-12 lg:mb-20">
           <p className="section-label">Selected Work</p>
-          <h2 className="section-heading">Featured Projects</h2>
+          <h2 className="section-heading">Featured Next.js <span className="text-[var(--accent)]">&</span> AI Projects</h2>
           <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
             From blockchain backends to AI assistants — real metrics, real users, clean architecture.
           </p>
@@ -107,7 +108,12 @@ const Projects: React.FC = () => {
                 i % 2 !== 0 ? 'lg:col-start-1 lg:col-span-6 lg:row-start-1' : 'lg:col-span-6'
               }`}>
                 <div className="w-full h-full relative overflow-hidden">
-                  <img src={project.image} className="project-img w-full h-full object-cover scale-[1.1] group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100" alt={project.title} />
+                  <Image 
+                    src={project.image} 
+                    fill
+                    className="project-img w-full h-full object-cover scale-[1.1] group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100" 
+                    alt={`${project.title} — ${project.category} Portfolio Piece`} 
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                 </div>
               </div>

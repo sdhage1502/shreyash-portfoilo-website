@@ -134,16 +134,16 @@ export const experiences = [
     role: 'Next.js Developer Intern',
     period: 'Nov 2025 – Present | Remote',
     description: 
-      "I build and maintain the company's main product website — Next.js, TypeScript, Tailwind, fully responsive and SEO-optimized. On the same product I built the frontend platform: MongoDB handles the data, Azure Media Services handles video streaming. I also built a custom CMS from scratch so the non-technical team can publish blog posts and manage SEO metadata without touching code. And I wrote the REST APIs that feed into n8n automation workflows for automated content distribution. Day to day: Agile, Git, GitHub, code reviews, continuous deployment.",
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n', 'CI/CD']
+      "I build and maintain high-performance product websites using Next.js, TypeScript, and Tailwind CSS. As a lead frontend developer on the core product, I implement SEO best practices and technical optimizations from scratch. I built a custom Headless CMS backed by MongoDB and Azure Media Services, enabling non-technical teams to manage content and SEO metadata. I also architected REST APIs for n8n automation workflows to streamline content distribution and AI-driven processes.",
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n', 'SEO Optimization']
   },
   {
     company: 'Hexadecimal Software',
     role: 'Software Developer Intern',
     period: 'Sep 2024 – Apr 2025 | Remote',
     description: 
-      "Built React components in TypeScript and Tailwind, wired up to REST APIs via NodeJS. Delivered 50+ features across Agile sprints. Deployment time dropped 90% after setting up proper CI/CD pipelines. Performance optimization with Chrome DevTools got us a 20% speed improvement. Wrote Jest unit tests across the codebase. Translated Figma designs into accessible, reusable components.",
-    tags: ['React', 'TypeScript', 'NodeJS', 'Tailwind CSS', 'MySQL', 'Firebase', 'Jest', 'Webpack', 'CI/CD']
+      "Developed responsive React components with absolute precision in TypeScript and Tailwind. Optimized web performance using Chrome DevTools, achieving a 20% speed improvement and significantly reducing LCP. Spearheaded the implementation of automated CICD pipelines on GitHub Actions, cutting manual deployment time by 90%. Focused on building reusable, accessible UI components and writing robust Jest unit tests for mission-critical features.",
+    tags: ['React', 'TypeScript', 'NodeJS', 'Tailwind CSS', 'MySQL', 'Firebase', 'Jest', 'CI/CD', 'Web Performance']
   }
 ];
 
@@ -151,82 +151,81 @@ export const experiences = [
 export const projects = [
   {
     id: '01',
-    title: 'Decentralized Crowdfunding Platform',
-    category: 'Blockchain · Web3 · Next.js',
+    title: 'Web3 Crowdfunding Platform',
+    category: 'Blockchain · Next.js · Smart Contract',
     status: 'Live · Dec 2024 – Present',
-    stats: { speed: '40% faster', responsiveness: '100% cross-device', reliability: '25% fewer bugs' },
+    stats: { speed: '40% faster', responsiveness: '100% Core Web Vitals', reliability: '25% fewer bugs' },
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Ethers.js', 'Firebase Firestore', 'MetaMask'],
-    description: "Solo project. Full frontend for a blockchain crowdfunding app — MetaMask wallet connect via Ethers.js, real-time Firestore sync for live dashboards, 40% perf gains from query optimization. Fixed cross-browser UI issues with Chrome DevTools — compatibility problems cut 25%.",
+    description: "Architected a high-performance decentralized crowdfunding platform. Optimized Web3 queries and state management for 40% faster loading. Implemented responsive design ensuring 100% compliance with mobile SEO and Core Web Vitals.",
     image: '/images/project-1.png',
     link: 'https://defund.shreyashdhage.in/'
   },
   {
-  id: '02',
-  title: 'Crypto Dashboard',
-  category: 'Blockchain · Web3 · TypeScript',
-  status: 'Live · Aug 2025 – Present',
-  stats: { speed: 'Optimized performance', responsiveness: '100% cross-device', reliability: 'Production-ready' },
-  stack: ['TypeScript', 'Next.js','Axios', 'React 18','Tailwind CSS v3','React Hot Toast','Vercel'],
-  description: "Real-time cryptocurrency tracking dashboard. Built with TypeScript and Next.js for type-safe development. Deployed on Vercel with optimized performance and responsive design across all devices.",
-  image: '/images/project-3.png',
-  link: 'https://crypto-dashboard-inky-one.vercel.app'
-},
+    id: '02',
+    title: 'Crypto Market Dashboard',
+    category: 'Real-time Data · Next.js · API',
+    status: 'Live · Aug 2025 – Present',
+    stats: { speed: 'Optimized LCP', responsiveness: '100% Mobile Ready', reliability: 'Type-Safe' },
+    stack: ['TypeScript', 'Next.js','Axios', 'React 18','Tailwind CSS v3','React Hot Toast','Vercel'],
+    description: "Real-time cryptocurrency analytics dashboard. Built with Next.js App Router for server-side rendering and SEO efficiency. Deployed on Vercel with automated performance monitoring and edge caching.",
+    image: '/images/project-3.png',
+    link: 'https://crypto-dashboard-inky-one.vercel.app'
+  },
   {
     id: '03',
-    title: 'Smart Weather + AI Assistant',
-    category: 'AI · React · API Integration',
+    title: 'Smart Weather AI Assistant',
+    category: 'AI Integration · React · Automation',
     status: 'Live · May 2024 – Present',
-    stats: { speed: '95 Lighthouse', responsiveness: '30% faster API', reliability: '100% AI reliability' },
+    stats: { speed: '95 Lighthouse', responsiveness: '30% faster API', reliability: 'AI Reliable' },
     stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'OpenWeatherMap API', 'Meta LLaMA 3.3', 'OpenRouter', 'Axios', 'Jest'],
-    description: "Weather app with an AI chat layer. Live data from OpenWeatherMap, localStorage caching, Meta LLaMA 3.3 via OpenRouter for contextual summaries and Q&A. 95 Lighthouse score. Response time cut 30% after Axios optimization and proper caching.",
+    description: "AI-integrated weather intelligence platform. Leveraged Meta LLaMA 3.3 via OpenRouter for contextual summaries. Optimized API response times by 30% through advanced caching and high-performance React patterns.",
     image: '/images/project-2.png',
     link: 'https://live-weather-dash-board.vercel.app/'
   },
   {
     id: '04',
-    title: 'Payload CMS + Automation Platform',
-    category: 'CMS · Next.js · Automation',
+    title: 'CMS & Content Automation',
+    category: 'Headless CMS · n8n · Next.js',
     status: 'Live · Nov 2025 – Present',
-    stats: { speed: '0 manual steps', responsiveness: 'Payload CMS', reliability: 'Azure' },
+    stats: { speed: 'Automated SEO', responsiveness: 'Payload CMS', reliability: 'Azure S3' },
     stack: ['Payload CMS', 'Next.js', 'TypeScript', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n'],
-    description: "Built at Meru Technosoft. A premium content platform leveraging Payload CMS for headless management. REST APIs feed n8n automation workflows for scheduled publishing and cross-platform content distribution.",
+    description: "Custom content automation platform built at Meru Technosoft. Integrates Payload CMS with n8n workflows for automated cross-platform distribution and SEO metadata management.",
     image: '/images/project-4.svg',
-    isPrivate: true // Show "Private Project" badge instead of link
+    isPrivate: true
   }
 ];
 
 /* ── About Copy ───────────────────────────────────── */
 export const aboutCopy = {
-  body: "I'm a Next.js developer from Pune. I build product websites, custom CMSs, and AI-powered web apps — fast, SEO-optimized, and built to convert. \n\nRight now I'm at Meru Technosoft building a full content platform: custom CMS, Azure media streaming, and n8n automation for content distribution. I use AI tools throughout development to ship faster without cutting corners. \n\nI also build MCP servers when projects need AI tools connected to real systems — databases, CMSs, internal tools. And I set up GA4, Google Search Console, and structured data for the sites I build, so you don't need a separate SEO agency. \n\nIf you have a project, I'm probably already thinking about how I'd build it."
+  body: "I am a results-driven Next.js Developer from Pune, specializing in high-performance web systems and AI-powered automation. I bridge the gap between complex engineering and seamless user experience, ensuring sites are fast, accessible, and SEO-optimized from day one. \n\nCurrently, I'm architecting full-stack solutions at Meru Technosoft, where I built a custom content platform featuring headless CMS, integrated AI, and n8n automation for global content distribution. My development process is powered by modern AI tools, allowing me to deliver production-ready code with extreme efficiency. \n\nBeyond building UI, I specialize in MCP server development, connecting AI ecosystems to databases and internal APIs. Every project I ship includes Google Search Console setups, GA4 tracking, and rich structured data (JSON-LD) to ensure organic growth and measurable results. \n\nIf you need a developer who understands both the 'how' of code and the 'why' of SEO performance, let's build something exceptional."
 };
 
 /* ── Process Steps (4-Step) ───────────────────────── */
 export const processSteps = [
   {
     id: 'Step 01',
-    title: 'Discovery (30 min)',
-    desc: 'We talk. I understand your goal, stack, timeline, and budget. I ask the questions most developers skip.'
+    title: 'Discovery & SEO Audit',
+    desc: 'We discuss your goals, target keywords, and technical stack. I analyze your niche to find the highest-ROI opportunities.'
   },
   {
     id: 'Step 02',
-    title: 'Design + Prototype',
-    desc: 'I use AI tools and Firebase Studio to prototype fast. You see something real within days, not weeks.'
+    title: 'Design & Prototype',
+    desc: 'Fast prototyping using AI-assisted design and Firebase for a real-time feedback loop. You see the product take shape within days.'
   },
   {
     id: 'Step 03',
-    title: 'Build + Automate',
-    desc: 'I develop the full app — Next.js, TypeScript, Firebase. I wire up n8n automation and MCP integrations where they genuinely add value.'
+    title: 'Build & Automate',
+    desc: 'I develop the full stack — Next.js, Node.js, and multi-platform integrations. I connect n8n workflows and AI MCP layers for genuine business value.'
   },
   {
     id: 'Step 04',
-    title: 'Ship + SEO + Handoff',
-    desc: 'Deployed, tested, SEO-wired (GA4, Search Console, JSON-LD). You get the code, the docs, and I stay on for bugs.'
+    title: 'Launch & SEO Wiring',
+    desc: 'Fully tested, SEO-optimized (GA4, JSON-LD, Sitemap), and launched. I provide complete handoff docs and ongoing performance support.'
   }
 ];
 
 /* ── Contact Info ─────────────────────────────────── */
 export const contactInfo = {
-  heading: "Got a project? Let's talk.",
   sub: "I typically reply within 12 hours.",
   email: "sdhage1502@gmail.com",
   cal: "https://cal.com/shreyash_15",

@@ -9,7 +9,7 @@ const Services: React.FC = () => {
         
         <div className="reveal mb-12 lg:mb-20">
           <p className="section-label">What I Build</p>
-          <h2 className="section-heading">Services</h2>
+          <h2 className="section-heading">Full-Stack <span className="text-[var(--accent)]">&</span> AI Services</h2>
           <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
             High-performance solutions delivered with SEO, automation, and clean architecture.
           </p>

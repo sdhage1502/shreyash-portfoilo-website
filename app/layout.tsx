@@ -5,14 +5,14 @@ import ClaritySnippet from '../components/Clarity';
 
 export const metadata = {
   metadataBase: new URL('https://portfoilo.shreyashdhage.in'),
-  title: 'Shreyash Dhage — Next.js Developer | AI-Assisted Dev · n8n · MCP | Pune',
+  title: 'Shreyash Dhage — Next.js Developer | AI Automation & MCP Expert',
   description: 
-    'Next.js developer from Pune. I build fast, SEO-optimized web apps using modern AI development practices, n8n automation, and MCP server integrations. Available for freelance and full-time roles.',
+    'Shreyash Dhage is a high-performance Next.js developer from Pune. Specializing in AI-assisted development, n8n automation, and MCP server integrations. Shipping fast, SEO-optimized web applications.',
   keywords: [
-    'Next.js developer', 'frontend developer India', 'React TypeScript developer',
-    'AI-assisted web development', 'n8n automation developer', 'MCP server developer',
-    'Firebase developer Pune', 'freelance Next.js developer', 'hire Next.js developer 2025',
-    'custom CMS development', 'SEO optimized web app'
+    'Shreyash Dhage', 'Next.js developer Pune', 'AI Automation developer', 'MCP server developer',
+    'n8n workflow expert', 'frontend developer India', 'React TypeScript developer',
+    'AI-assisted development', 'Freelance Next.js developer 2025', 'Hire Next.js developer Pune',
+    'Technical SEO expert Pune', 'Custom CMS development', 'Web3 developer India'
   ],
   authors: [{ name: 'Shreyash Dhage' }],
   robots: 'index, follow',
@@ -20,8 +20,8 @@ export const metadata = {
     canonical: 'https://portfoilo.shreyashdhage.in',
   },
   openGraph: {
-    title: 'Shreyash Dhage — Next.js Developer',
-    description: 'Next.js developer. AI-assisted dev, n8n automation, MCP servers. I ship.',
+    title: 'Shreyash Dhage — Next.js Developer & AI Automation Specialist',
+    description: 'Next.js, AI automation, and MCP servers. I build fast, SEO-ready systems that scale.',
     url: 'https://portfoilo.shreyashdhage.in',
     siteName: 'Shreyash Dhage Portfolio',
     images: [
@@ -38,7 +38,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Shreyash Dhage — Next.js Developer',
-    description: 'Next.js · TypeScript · n8n · MCP Servers · Firebase · Pune',
+    description: 'Next.js · AI Automation · MCP Servers · n8n · Pune',
     images: ['https://portfoilo.shreyashdhage.in/og-image.png'],
   },
   icons: {
@@ -52,11 +52,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Shreyash Dhage",
-  "jobTitle": "Next.js Developer",
+  "jobTitle": "Full-Stack Next.js Developer",
   "email": "sdhage1502@gmail.com",
   "url": "https://portfoilo.shreyashdhage.in",
   "sameAs": [
-    "https://github.com/sdhage1502", // Placeholder: user should update or I keep
+    "https://github.com/sdhage1502",
     "https://linkedin.com/in/shreyashdhage"
   ],
   "address": {
@@ -66,16 +66,30 @@ const jsonLd = {
     "addressCountry": "IN"
   },
   "knowsAbout": [
-    "Next.js", "React", "TypeScript", "Tailwind CSS",
-    "AI-Assisted Development", "n8n Automation",
-    "MCP Server Development", "Firebase", "Firestore",
-    "SEO Optimization", "Google Analytics 4",
-    "REST APIs", "MongoDB", "Azure Media Services"
+    "Next.js", "React", "TypeScript", "AI-Assisted Web Development",
+    "n8n Workflow Automation", "MCP (Model Context Protocol) Server Development",
+    "Firebase & Firestore", "SEO Optimization", "Web Performance & Core Web Vitals"
   ],
-  "offers": {
-    "@type": "Offer",
-    "name": "Freelance Web Development & AI Integration",
-    "description": "Next.js web apps, CMS, SEO, GA4, n8n automation, MCP servers"
+  "description": "Next.js developer specializing in high-performance web applications and AI-integrated systems.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Development Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Next.js Web Application Development"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI & n8n Automation"
+        }
+      }
+    ]
   }
 };
 
