@@ -9,10 +9,10 @@ const Experience: React.FC = () => {
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
         <div className="reveal mb-12 lg:mb-20">
-          <p className="section-label">03 · Experience</p>
+          <p className="section-label">03 · The Journey</p>
           <h2 className="section-heading">Professional History</h2>
-          <p className="text-lg font-light text-white/50 max-w-[500px] mt-6">
-            Building high-performance digital products and automated architectures.
+          <p className="text-lg font-normal text-white/50 max-w-[500px] mt-6">
+            Building digital products that save time and solve real-world problems.
           </p>
         </div>
 

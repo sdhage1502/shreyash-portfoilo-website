@@ -55,43 +55,40 @@ const Hero: React.FC = () => {
       </div>
       <div className="max-w-[var(--container-max)] mx-auto w-full relative z-[2] hero-content">
         
-        <h1 className="hero-name text-[clamp(2.5rem,12vw,10.5rem)] font-extrabold leading-[0.82] tracking-[-0.06em] mb-8 sm:mb-10 lg:mb-12">
+        <h1 className="hero-name text-[clamp(2.5rem,12vw,10.5rem)] font-extrabold leading-[1.15] md:leading-[1.1] lg:leading-[1.05] tracking-[-0.03em] mb-8 sm:mb-10 lg:mb-12">
           <span className="word">Shreyash</span>
           <br className="md:hidden" />
           <span className="word ml-0 md:ml-6 lg:ml-8">Dhage</span>
         </h1>
 
-        <p className="hero-tagline text-lg sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] text-white/90 max-w-[900px] mb-8 sm:mb-10 lg:mb-14 xl:mb-16">
-          Next.js developer building <span className="text-[var(--accent)]">high-performance</span> systems with integrated AI automation.
+        <p className="hero-tagline text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-white/95 max-w-[900px] mb-8 sm:mb-10 lg:mb-14 xl:mb-16">
+          I help people turn big ideas into <span className="text-[var(--accent)] font-bold">fast, functional,</span> and beautiful products.
         </p>
 
         {/* Keyword pills — visible to users AND search bots */}
         <div className="hero-keywords flex flex-wrap items-center gap-3 sm:gap-4 lg:gap-5 mb-10 sm:mb-12 lg:mb-16">
-          {['Next.js', 'TypeScript', 'AI-Assisted Dev', 'n8n Automation', 'MCP Servers', 'Firebase', 'SEO Ready'].map((kw, i) => (
+          {['Next.js Specialist', 'AI Superpowers', 'Automated Flows', 'Cloud Architecture', 'SEO Ready'].map((kw, i) => (
             <React.Fragment key={kw}>
-              <span className="hero-kw px-4 py-2 border border-white/10 rounded-sm text-[10px] font-mono tracking-widest text-white/40 hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors cursor-default">
+              <span className="hero-kw px-4 py-2 border border-white/10 rounded-full text-[10px] font-mono tracking-widest text-white/40 hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-300 cursor-default">
                 {kw}
               </span>
-              {i < 6 && <span className="hero-kw-sep opacity-20 hidden md:inline">/</span>}
+              {i < 4 && <span className="hero-kw-sep opacity-20 hidden md:inline">/</span>}
             </React.Fragment>
           ))}
         </div>
 
-        <p className="hero-body text-sm sm:text-base md:text-lg lg:text-xl font-light leading-[1.65] text-white/50 max-w-[540px] md:max-w-[720px] lg:max-w-[800px] mb-10 sm:mb-12 lg:mb-16">
-          Next.js developer from Pune. 1+ year in production.<br className="hidden sm:block" />
-          I build product websites, custom CMSs, and AI-powered tools —
-          using modern AI development practices, n8n for automation,
-          and Firebase for backend. SEO and GA4 built in from day one.
+        <p className="hero-body text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed text-white/60 max-w-[540px] md:max-w-[720px] lg:max-w-[800px] mb-10 sm:mb-12 lg:mb-16">
+          I'm Shreyash, a developer from Pune. I spend my days crafting thoughtful digital products with Next.js and AI tools — building things that don't just work, but feel right.
         </p>
 
         <div className="hero-ctas flex flex-col sm:flex-row gap-4 sm:gap-6 items-stretch sm:items-center w-full sm:w-auto">
           <a href="https://cal.com/shreyash_15"
              target="_blank" rel="noopener noreferrer"
-             className="cta-primary magnetic text-center touch-manipulation min-h-[48px] px-8 sm:px-10 py-3.5 sm:py-4">
-            Book a Free Call
+             className="cta-primary magnetic text-center touch-manipulation min-h-[54px] px-10 py-4">
+            Let's Start a Project
           </a>
-          <a href="#work" className="cta-secondary magnetic text-center touch-manipulation min-h-[48px] px-8 sm:px-10 py-3.5 sm:py-4">
-            View My Work ↓
+          <a href="#work" className="cta-secondary magnetic text-center touch-manipulation min-h-[54px] px-10 py-4">
+            See My Work ↓
           </a>
         </div>
       </div>

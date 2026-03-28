@@ -14,11 +14,12 @@
     --fg: #ffffff;
     --accent: #C8FF00;
     --accent-dim: rgba(200, 255, 0, 0.15);
-    --font-main: "Bricolage Grotesque", sans-serif;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Inter", sans-serif;
     --font-mono: "Space Mono", monospace;
     --container-max: 1440px;
     --gutter: clamp(1rem, 5vw, 6rem); 
-    --section-gap: clamp(4rem, 12vh, 10rem);
+    --section-gap: clamp(5rem, 15vh, 12rem);
   }
 
   html {
@@ -72,12 +73,11 @@
 }
 
 .section-heading {
-  font-size: clamp(1.85rem, 7.5vw, 6rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.25rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: #ffffff;
-  text-transform: uppercase;
 }
 
 /* ── Components: Buttons & CTAs ────────────────────── */
@@ -87,15 +87,14 @@
   color: #000000;
   padding: 1rem 2.5rem;
   border-radius: 2px;
-  font-weight: 800;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 100%, 10% 100%, 0% 70%);
+  letter-spacing: 0.02em;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 25%, 100% 100%, 5% 100%, 0% 75%);
 }
 .cta-primary:hover {
   transform: translateY(-3px);
@@ -108,14 +107,13 @@
   color: #ffffff;
   padding: 1rem 2.5rem;
   border-radius: 2px;
-  font-weight: 800;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   transition: all 0.4s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   background: transparent;
 }
 .cta-secondary:hover {
@@ -474,10 +472,13 @@
 .word {
   opacity: 0;
   display: inline-block;
+  white-space: pre-wrap;
+  padding: 0.1em 0;
+  margin: -0.1em 0;
   clip-path: inset(0 100% 0 0);
   transition: opacity 0.01s, clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.word.in { opacity: 1; clip-path: inset(0 0 0 0); }
+.word.in { opacity: 1; clip-path: inset(-10% -20% -10% 0); }
 
 .hero-tagline, .hero-keywords, .hero-body, .hero-ctas, .hero-badge, .scroll-indicator {
   opacity: 0;

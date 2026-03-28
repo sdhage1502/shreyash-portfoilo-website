@@ -33,10 +33,10 @@ const Projects: React.FC = () => {
         
         {/* Section header */}
         <div className="reveal mb-12 lg:mb-20">
-          <p className="section-label">Selected Work</p>
+          <p className="section-label">02 · Selected Work</p>
           <h2 className="section-heading">Featured Projects</h2>
-          <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
-            From blockchain backends to AI assistants — real metrics, real users, clean architecture.
+          <p className="text-lg font-normal text-white/50 max-w-[600px] leading-relaxed mt-6">
+            A few things I've built lately — from blockchain tools to AI assistants.
           </p>
         </div>
 
@@ -91,8 +91,8 @@ const Projects: React.FC = () => {
 
                 <div className="flex items-center gap-6 mt-4 w-full sm:w-auto">
                   {!project.isPrivate ? (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-3.5">
-                      View Project
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-3.5 px-8">
+                      See Project Live
                     </a>
                   ) : (
                     <span className="w-full sm:w-auto text-center px-8 py-3.5 rounded-sm border border-white/10 text-white/20 text-[10px] font-mono tracking-widest uppercase">

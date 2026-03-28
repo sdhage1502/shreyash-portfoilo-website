@@ -7,9 +7,9 @@ const Services: React.FC = () => {
     <section id="services" aria-label="Services" className="py-[clamp(5rem,10vw,10rem)]">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
-        <div className="reveal mb-12 lg:mb-20">
-          <p className="section-label">What I Build</p>
-          <h2 className="section-heading">Services</h2>
+        <div className="reveal mb-12 lg:mb-24">
+          <p className="section-label">04 · Expertise</p>
+          <h2 className="section-heading">How I can <span className="text-[var(--accent)]">help</span></h2>
           <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
             High-performance solutions delivered with SEO, automation, and clean architecture.
           </p>
@@ -103,7 +103,7 @@ const Services: React.FC = () => {
             <a href="https://cal.com/shreyash_15"
                target="_blank" rel="noopener noreferrer"
                className="cta-primary magnetic w-full py-4">
-              Book a Free Call
+              Let's Discuss Your Project
             </a>
           </div>
 

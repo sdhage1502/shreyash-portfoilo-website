@@ -9,8 +9,8 @@ const About: React.FC = () => {
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
         <div className="reveal mb-12 lg:mb-24">
-          <p className="section-label">01 · About Me</p>
-          <h2 className="section-heading">Engineer <span className="text-[var(--accent)]">&</span> Builder</h2>
+          <p className="section-label">01 · Behind the screens</p>
+          <h2 className="section-heading">Crafting with <span className="text-[var(--accent)]">Purpose</span></h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2rem,5vw,6rem)] items-start">
@@ -52,8 +52,8 @@ const About: React.FC = () => {
             <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto">
               <a href="https://cal.com/shreyash_15" 
                  target="_blank" rel="noopener noreferrer"
-                 className="magnetic cta-primary inline-flex justify-center items-center gap-2 w-full sm:w-auto touch-manipulation min-h-[48px]">
-                Book a Free Call ↗
+                 className="magnetic cta-primary inline-flex justify-center items-center gap-2 w-full sm:w-auto touch-manipulation min-h-[54px] px-10">
+                Let's Work Together ↗
               </a>
               <a href="mailto:sdhage1502@gmail.com" 
                  className="magnetic py-3 px-8 rounded-full border border-white/10 text-white/60 text-sm font-semibold hover:bg-white/5 hover:text-white transition-all text-center w-full sm:w-auto touch-manipulation min-h-[48px] flex items-center justify-center">

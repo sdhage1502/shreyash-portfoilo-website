@@ -9,9 +9,9 @@ const Contact: React.FC = () => {
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)] text-center">
         
         <div className="reveal mb-12 lg:mb-20">
-          <p className="section-label mx-auto before:left-1/2 before:-translate-x-1/2">06 · Get in Touch</p>
+          <p className="section-label mx-auto before:left-1/2 before:-translate-x-1/2">06 · Say Hello</p>
           <h2 className="section-heading mb-8">
-            Let's build <span className="text-[var(--accent)]">it.</span>
+            Ready to start something <span className="text-[var(--accent)]">new?</span>
           </h2>
           <p className="text-lg font-light text-white/40 max-w-[600px] mx-auto">
             {contactInfo.sub}
@@ -27,8 +27,8 @@ const Contact: React.FC = () => {
           </a>
 
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-12 w-full sm:w-auto px-6">
-            <a href={contactInfo.cal} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-4">
-              Book a Free Call
+            <a href={contactInfo.cal} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-5 px-12">
+              Schedule a Chat
             </a>
           </div>
 

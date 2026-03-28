@@ -61,7 +61,7 @@ const Header: React.FC = () => {
              className={`nav-cta magnetic hidden xs:flex ${hasEntered ? 'in' : ''}`}
              style={{ transitionDelay: '0.6s' }}>
             <span className="nav-cta-dot" aria-hidden="true"></span>
-            <span className="nav-cta-text">Book a Call</span>
+            <span className="nav-cta-text">Let's Chat</span>
           </a>
 
           <button 
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
              transform: isDrawerOpen ? 'translateY(0)' : 'translateY(20px)'
            }}
         >
-          Book a Call
+          Let's Chat
         </a>
 
         {/* Drawer Socials */}

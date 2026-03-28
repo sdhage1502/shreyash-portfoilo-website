@@ -2,43 +2,43 @@ import React from 'react';
 
 /* ── Loader & Marquee items ─────────────────────────── */
 export const loaderWords = [
+  'DESIGNING',
+  'BUILDING',
+  'AUTOMATING',
+  'SCALING',
+  'SHIPPING',
   'NEXT.JS',
   'TYPESCRIPT',
-  'REACT',
   'AI TOOLS',
   'n8n',
   'MCP SERVERS',
   'FIREBASE',
-  'MONGODB',
-  'AZURE',
-  'BLOCKCHAIN',
-  'BUILDER',
   'PUNE',
 ];
 
 export const marqueeItems = [
-  'NEXT.JS DEVELOPER', 'AI-ASSISTED DEV', 'n8n AUTOMATION', 'MCP SERVERS',
-  'TYPESCRIPT', 'FIREBASE', 'MONGODB', 'AZURE MEDIA SERVICES',
-  'SEO OPTIMIZED', 'AVAILABLE FOR FREELANCE', 'PUNE'
+  'NEXT.JS EXPERT', 'AI-DRIVEN DEV', 'n8n AUTOMATION', 'MCP SUPERPOWERS',
+  'TYPESCRIPT', 'FIREBASE', 'MONGODB', 'AZURE MEDIA',
+  'SEO FIRST', 'AVAILABLE FOR PROJECTS', 'MADE IN PUNE'
 ];
 
 /* ── Stats data (About Section) ─────────────────────── */
 export const stats = [
-  { label: 'Features shipped', value: 50, suffix: '+' },
-  { label: 'Companies', value: 2, suffix: '—' },
-  { label: 'Production exp.', value: 1, suffix: 'yr+' },
-  { label: 'Website Performance score', value: "95+", suffix: '—' },
+  { label: 'Impactful features shipped', value: 50, suffix: '+' },
+  { label: 'Partnerships built', value: 2, suffix: '' },
+  { label: 'Years in the trenches', value: 1, suffix: '+' },
+  { label: 'Performance-obsessed', value: 95, suffix: '%' },
 ];
 
 /* ── Skills bento items (8 Cards) ──────────────────── */
 export const bentoSkills = [
   {
-    category: 'Card 1', // Labelled for my reference in implementation
+    category: 'Card 1',
     accent: 'lime',
-    title: 'Next.js & Frontend',
+    title: 'Modern Frontend',
     items: [
-      { name: 'Next.js 14+', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-      { name: 'React 18', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'Next.js 15', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'React 19', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
       { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
       { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
       { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
@@ -50,41 +50,41 @@ export const bentoSkills = [
   {
     category: 'Card 2',
     accent: 'purple',
-    title: 'AI-Assisted Development',
+    title: 'AI Superpowers',
     items: [
       { name: 'Cursor AI', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cursor.svg' },
       { name: 'GitHub Copilot', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/githubcopilot.svg' },
       { name: 'MCP Servers', icon: 'https://raw.githubusercontent.com/modelcontextprotocol/docs/main/favicon.svg' },
       { name: 'OpenRouter API', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg' },
-      { name: 'Meta LLaMA 3.3', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg' }
+      { name: 'Llama 3.3', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg' }
     ],
     span: false
   },
   {
     category: 'Card 3',
     accent: 'teal',
-    title: 'Automation & Integrations',
+    title: 'Workflow Magic',
     items: [
-      { name: 'n8n Workflow', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/n8n.svg' },
-      { name: 'MCP Server Dev', icon: 'https://raw.githubusercontent.com/modelcontextprotocol/docs/main/favicon.svg' },
-      { name: 'Webhook design', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/webhooks.svg' },
-      { name: 'REST API integration', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postman.svg' }
+      { name: 'n8n Workflows', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/n8n.svg' },
+      { name: 'Custom MCPs', icon: 'https://raw.githubusercontent.com/modelcontextprotocol/docs/main/favicon.svg' },
+      { name: 'Automation', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/webhooks.svg' },
+      { name: 'API Design', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postman.svg' }
     ],
     span: false
   },
   {
     category: 'Card 4',
-    title: 'Backend & APIs',
+    title: 'The Backbone',
     items: [
       { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-      { name: 'REST API Design', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postman.svg' },
+      { name: 'REST APIs', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postman.svg' },
       { name: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' }
     ],
     span: false
   },
   {
     category: 'Card 5',
-    title: 'Databases & Cloud',
+    title: 'Cloud & Data',
     items: [
       { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg' },
       { name: 'Firestore', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg' },
@@ -95,10 +95,9 @@ export const bentoSkills = [
   },
   {
     category: 'Card 6',
-    title: 'Dev Tools',
+    title: 'Daily Tools',
     items: [
       { name: 'Git/GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-      { name: 'Firebase Studio', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg' },
       { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
       { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' }
     ],
@@ -106,22 +105,22 @@ export const bentoSkills = [
   },
   {
     category: 'Card 7',
-    title: 'SEO & Analytics',
+    title: 'Visible Growth',
     items: [
-      { name: 'Search Console', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlesearchconsole.svg' },
-      { name: 'GA4', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg' },
-      { name: 'Technical SEO', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg' },
-      { name: 'Structured Data', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/json.svg' }
+      { name: 'SEO Strategy', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlesearchconsole.svg' },
+      { name: 'Analytics', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg' },
+      { name: 'Optimization', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg' },
+      { name: 'Data Structuring', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/json.svg' }
     ],
     span: false
   },
   {
     category: 'Card 8',
-    title: 'Methodology',
+    title: 'How I Work',
     items: [
-      { name: 'Agile/Sprint', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg' },
-      { name: 'CI/CD Pipelines', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/githubactions.svg' },
-      { name: 'Unit Testing', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg' }
+      { name: 'Agile Flow', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg' },
+      { name: 'CI/CD Life', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/githubactions.svg' },
+      { name: 'Quality First', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg' }
     ],
     span: false
   }
@@ -139,11 +138,11 @@ export const experiences = [
   },
   {
     company: 'Hexadecimal Software',
-    role: 'Software Developer Intern',
-    period: 'Sep 2024 – Apr 2025 | Remote',
+    role: 'Software Developer (Intern)',
+    period: 'Sep 2024 – Apr 2025',
     description: 
-      "Built React components in TypeScript and Tailwind, wired up to REST APIs via NodeJS. Delivered 50+ features across Agile sprints. Deployment time dropped 90% after setting up proper CI/CD pipelines. Performance optimization with Chrome DevTools got us a 20% speed improvement. Wrote Jest unit tests across the codebase. Translated Figma designs into accessible, reusable components.",
-    tags: ['React', 'TypeScript', 'NodeJS', 'Tailwind CSS', 'MySQL', 'Firebase', 'Jest', 'Webpack', 'CI/CD']
+      "Started as a developer focused on building reusable UI components and ended up streamlining our entire deployment process. I cut down manual deployment times by almost 90% by setting up automated pipelines. I spent a lot of time in Figma, turning designs into pixel-perfect React components while making sure everything was lightning fast and accessible for everyone.",
+    tags: ['React', 'TypeScript', 'Node.js', 'Performance', 'Testing']
   }
 ];
 
@@ -153,32 +152,32 @@ export const projects = [
     id: '01',
     title: 'Decentralized Crowdfunding Platform',
     category: 'Blockchain · Web3 · Next.js',
-    status: 'Live · Dec 2024 – Present',
-    stats: { speed: '40% faster', responsiveness: '100% cross-device', reliability: '25% fewer bugs' },
-    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Ethers.js', 'Firebase Firestore', 'MetaMask'],
-    description: "Solo project. Full frontend for a blockchain crowdfunding app — MetaMask wallet connect via Ethers.js, real-time Firestore sync for live dashboards, 40% perf gains from query optimization. Fixed cross-browser UI issues with Chrome DevTools — compatibility problems cut 25%.",
+    status: 'Live & Growing',
+    stats: { speed: '40% Faster', responsiveness: 'Universal', reliability: 'Solid' },
+    stack: ['Next.js', 'Ethers.js', 'Tailwind CSS', 'Firebase'],
+    description: "Built a bridge for the decentralised world. I handled the full frontend for this crowdfunding platform, integrating MetaMask for secure transactions and real-time data sync to keep contributors updated instantly. Optimized for speed and cross-browser reliability.",
     image: '/images/project-1.png',
     link: 'https://defund.shreyashdhage.in/'
   },
   {
-  id: '02',
-  title: 'Crypto Dashboard',
-  category: 'Blockchain · Web3 · TypeScript',
-  status: 'Live · Aug 2025 – Present',
-  stats: { speed: 'Optimized performance', responsiveness: '100% cross-device', reliability: 'Production-ready' },
-  stack: ['TypeScript', 'Next.js','Axios', 'React 18','Tailwind CSS v3','React Hot Toast','Vercel'],
-  description: "Real-time cryptocurrency tracking dashboard. Built with TypeScript and Next.js for type-safe development. Deployed on Vercel with optimized performance and responsive design across all devices.",
-  image: '/images/project-3.png',
-  link: 'https://crypto-dashboard-inky-one.vercel.app'
-},
+    id: '02',
+    title: 'The Crypto Hub',
+    category: 'Finance · Web3 · TypeScript',
+    status: 'Operational',
+    stats: { speed: 'Real-time', responsiveness: 'Adaptive', reliability: 'Production Grade' },
+    stack: ['TypeScript', 'Next.js', 'Axios', 'React 19'],
+    description: "A clean, minimalist dashboard for tracking the pulse of the crypto market. Built with type-safety at its core, ensuring the data you see is accurate and delivered in real-time. Minimal latency, maximum clarity.",
+    image: '/images/project-3.png',
+    link: 'https://crypto-dashboard-inky-one.vercel.app'
+  },
   {
     id: '03',
-    title: 'Smart Weather + AI Assistant',
-    category: 'AI · React · API Integration',
-    status: 'Live · May 2024 – Present',
-    stats: { speed: '95 Lighthouse', responsiveness: '30% faster API', reliability: '100% AI reliability' },
-    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'OpenWeatherMap API', 'Meta LLaMA 3.3', 'OpenRouter', 'Axios', 'Jest'],
-    description: "Weather app with an AI chat layer. Live data from OpenWeatherMap, localStorage caching, Meta LLaMA 3.3 via OpenRouter for contextual summaries and Q&A. 95 Lighthouse score. Response time cut 30% after Axios optimization and proper caching.",
+    title: 'AI Weather Companion',
+    category: 'AI · React · Utilities',
+    status: 'Live',
+    stats: { speed: 'Lighthouse 95+', responsiveness: '30% Faster', reliability: 'AI Powered' },
+    stack: ['React', 'TypeScript', 'Llama 3.3', 'OpenWeather API'],
+    description: "What if your weather app could actually talk to you? I built this weather assistant that uses AI to provide contextual summaries and helpful advice based on live meteorological data. Fast, smart, and built with modern caching patterns.",
     image: '/images/project-2.png',
     link: 'https://live-weather-dash-board.vercel.app/'
   },
@@ -191,43 +190,43 @@ export const projects = [
     stack: ['Payload CMS', 'Next.js', 'TypeScript', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n'],
     description: "Built at Meru Technosoft. A premium content platform leveraging Payload CMS for headless management. REST APIs feed n8n automation workflows for scheduled publishing and cross-platform content distribution.",
     image: '/images/project-4.svg',
-    isPrivate: true // Show "Private Project" badge instead of link
+    isPrivate: true
   }
 ];
 
 /* ── About Copy ───────────────────────────────────── */
 export const aboutCopy = {
-  body: "I'm a Next.js developer from Pune. I build product websites, custom CMSs, and AI-powered web apps — fast, SEO-optimized, and built to convert. \n\nRight now I'm at Meru Technosoft building a full content platform: custom CMS, Azure media streaming, and n8n automation for content distribution. I use AI tools throughout development to ship faster without cutting corners. \n\nI also build MCP servers when projects need AI tools connected to real systems — databases, CMSs, internal tools. And I set up GA4, Google Search Console, and structured data for the sites I build, so you don't need a separate SEO agency. \n\nIf you have a project, I'm probably already thinking about how I'd build it."
+  body: "I'm a developer who believes technology should be helpful, not confusing. Based in Pune, I've spent the last few years mastering the art of building web applications that are as fast as they are beautiful. I don't just write code; I build solutions that save people time and effort. \n\nCurrently, I'm at Meru Technosoft, where I'm deep into building a full-scale content platform. I'm obsessed with performance, automation, and finding new ways to use AI to make development smoother. Whether it's setting up complex n8n workflows or crafting a custom CMS, my goal is always the same: make it work perfectly. \n\nI treat every project like my own. I don't just hand over the code and disappear; I make sure everything from SEO to analytics is properly set up so you're ready for growth from day one. If you're looking for someone who cares about the details just as much as you do, let's talk."
 };
 
 /* ── Process Steps (4-Step) ───────────────────────── */
 export const processSteps = [
   {
     id: 'Step 01',
-    title: 'Discovery (30 min)',
-    desc: 'We talk. I understand your goal, stack, timeline, and budget. I ask the questions most developers skip.'
+    title: 'The Conversation',
+    desc: "We start by talking about your vision. I'll ask the deep questions to understand exactly what you need, your goals, and who you're building for."
   },
   {
     id: 'Step 02',
-    title: 'Design + Prototype',
-    desc: 'I use AI tools and Firebase Studio to prototype fast. You see something real within days, not weeks.'
+    title: 'Speed Prototyping',
+    desc: "I don't believe in waiting weeks to see progress. I use modern AI tools to get a functional prototype in your hands as quickly as possible."
   },
   {
     id: 'Step 03',
-    title: 'Build + Automate',
-    desc: 'I develop the full app — Next.js, TypeScript, Firebase. I wire up n8n automation and MCP integrations where they genuinely add value.'
+    title: 'Building for Scale',
+    desc: "This is where the magic happens. I build out the full application with clean, maintainable code, integrating automation where it makes sense."
   },
   {
     id: 'Step 04',
-    title: 'Ship + SEO + Handoff',
-    desc: 'Deployed, tested, SEO-wired (GA4, Search Console, JSON-LD). You get the code, the docs, and I stay on for bugs.'
+    title: 'The Perfect Launch',
+    desc: "Shipping is just the beginning. I handle the SEO, analytics, and documentation, staying by your side to make sure everything runs smoothly."
   }
 ];
 
 /* ── Contact Info ─────────────────────────────────── */
 export const contactInfo = {
-  heading: "Got a project? Let's talk.",
-  sub: "I typically reply within 12 hours.",
+  heading: "Have a great idea? Let's build it together.",
+  sub: "I'm always open to interesting projects and collaborations.",
   email: "sdhage1502@gmail.com",
   cal: "https://cal.com/shreyash_15",
   github: "https://github.com/sdhage1502",
