@@ -4,10 +4,10 @@ import FloatingBackground from '../components/FloatingBackground';
 import ClaritySnippet from '../components/Clarity';
 
 export const metadata = {
-  metadataBase: new URL('https://portfoilo.shreyashdhage.in'),
+  metadataBase: new URL('https://portfolio.shreyashdhage.in'),
   title: 'Shreyash Dhage — Next.js Developer | AI Automation & MCP Expert',
   description: 
-    'Shreyash Dhage is a high-performance Next.js developer from Pune. Specializing in AI-assisted development, n8n automation, and MCP server integrations. Shipping fast, SEO-optimized web applications.',
+    'Shreyash Dhage is a high-performance Next.js developer from Pune. Specialized in AI automation, n8n workflows, and MCP servers. Shipping fast, SEO-ready web apps.',
   keywords: [
     'Shreyash Dhage', 'Next.js developer Pune', 'AI Automation developer', 'MCP server developer',
     'n8n workflow expert', 'frontend developer India', 'React TypeScript developer',
@@ -17,16 +17,16 @@ export const metadata = {
   authors: [{ name: 'Shreyash Dhage' }],
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://portfoilo.shreyashdhage.in',
+    canonical: 'https://portfolio.shreyashdhage.in',
   },
   openGraph: {
     title: 'Shreyash Dhage — Next.js Developer & AI Automation Specialist',
     description: 'Next.js, AI automation, and MCP servers. I build fast, SEO-ready systems that scale.',
-    url: 'https://portfoilo.shreyashdhage.in',
+    url: 'https://portfolio.shreyashdhage.in',
     siteName: 'Shreyash Dhage Portfolio',
     images: [
       {
-        url: 'https://portfoilo.shreyashdhage.in/og-image.png',
+        url: 'https://portfolio.shreyashdhage.in/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Shreyash Dhage — Next.js Developer',
@@ -39,7 +39,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Shreyash Dhage — Next.js Developer',
     description: 'Next.js · AI Automation · MCP Servers · n8n · Pune',
-    images: ['https://portfoilo.shreyashdhage.in/og-image.png'],
+    images: ['https://portfolio.shreyashdhage.in/og-image.png'],
   },
   icons: {
     icon: '/favicon.svg',
@@ -54,7 +54,7 @@ const jsonLd = {
   "name": "Shreyash Dhage",
   "jobTitle": "Full-Stack Next.js Developer",
   "email": "sdhage1502@gmail.com",
-  "url": "https://portfoilo.shreyashdhage.in",
+  "url": "https://portfolio.shreyashdhage.in",
   "sameAs": [
     "https://github.com/sdhage1502",
     "https://linkedin.com/in/shreyashdhage"
