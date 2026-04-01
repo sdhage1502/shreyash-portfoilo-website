@@ -41,11 +41,7 @@ export const metadata = {
     description: 'Next.js · AI Automation · MCP Servers · n8n · Pune',
     images: ['https://portfolio.shreyashdhage.in/og-image.png'],
   },
-  icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
-  },
+
 };
 
 const jsonLd = {
