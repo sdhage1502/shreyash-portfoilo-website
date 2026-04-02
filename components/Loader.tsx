@@ -2,9 +2,6 @@
 
 import React, { useEffect } from 'react';
 
-interface LoaderProps {
-  onComplete: () => void;
-}
 
 declare global {
   interface Window {
@@ -12,7 +9,7 @@ declare global {
   }
 }
 
-const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
+const Loader: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(true);
 
   useEffect(() => {
@@ -79,14 +76,13 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
 
         setTimeout(() => {
           if (loader) loader.classList.add('done');
-          onComplete(); 
           setIsMounted(false);
         }, PANEL_DURATION + 200);
       }, 200);
     }
 
     showWord();
-  }, [onComplete]);
+  }, []);
 
   if (!isMounted) return null;
 

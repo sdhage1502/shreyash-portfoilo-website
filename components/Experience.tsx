@@ -5,7 +5,7 @@ import { experiences } from '../data/portfolioData';
 
 const Experience: React.FC = () => {
   return (
-    <section id="work" className="py-[clamp(5rem,10vw,10rem)] relative overflow-hidden bg-black/20">
+    <section id="experience" className="py-[clamp(5rem,10vw,10rem)] relative overflow-hidden bg-black/20">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
         <div className="reveal mb-12 lg:mb-20">

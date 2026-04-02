@@ -2,6 +2,7 @@ import './globals.css';
 import Script from 'next/script';
 import FloatingBackground from '../components/FloatingBackground';
 import ClaritySnippet from '../components/Clarity';
+import PageEffects from '../components/PageEffects';
 
 export const metadata = {
   metadataBase: new URL('https://portfolio.shreyashdhage.in'),
@@ -46,47 +47,77 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Shreyash Dhage",
-  "jobTitle": "Full-Stack Next.js Developer",
-  "email": "sdhage1502@gmail.com",
-  "url": "https://portfolio.shreyashdhage.in",
-  "sameAs": [
-    "https://github.com/sdhage1502",
-    "https://linkedin.com/in/shreyashdhage"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Pune",
-    "addressRegion": "Maharashtra",
-    "addressCountry": "IN"
-  },
-  "knowsAbout": [
-    "Next.js", "React", "TypeScript", "AI-Assisted Web Development",
-    "n8n Workflow Automation", "MCP (Model Context Protocol) Server Development",
-    "Firebase & Firestore", "SEO Optimization", "Web Performance & Core Web Vitals"
-  ],
-  "description": "Next.js developer specializing in high-performance web applications and AI-integrated systems.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Development Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Next.js Web Application Development"
-        }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://portfolio.shreyashdhage.in/#person",
+      "name": "Shreyash Dhage",
+      "jobTitle": "Full-Stack Next.js Developer",
+      "email": "sdhage1502@gmail.com",
+      "url": "https://portfolio.shreyashdhage.in",
+      "image": "https://portfolio.shreyashdhage.in/og-image.png",
+      "nationality": "Indian",
+      "sameAs": [
+        "https://github.com/sdhage1502",
+        "https://linkedin.com/in/shreyashdhage"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI & n8n Automation"
-        }
+      "knowsAbout": [
+        "Next.js", "React", "TypeScript", "AI-Assisted Web Development",
+        "n8n Workflow Automation", "MCP (Model Context Protocol) Server Development",
+        "Firebase & Firestore", "SEO Optimization", "Web Performance & Core Web Vitals"
+      ],
+      "description": "Next.js developer specializing in high-performance web applications and AI-integrated systems."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://portfolio.shreyashdhage.in/#website",
+      "url": "https://portfolio.shreyashdhage.in",
+      "name": "Shreyash Dhage — Next.js Developer",
+      "publisher": {
+        "@id": "https://portfolio.shreyashdhage.in/#person"
       }
-    ]
-  }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://portfolio.shreyashdhage.in/#service",
+      "name": "Shreyash Dhage — Next.js Development & AI Services",
+      "url": "https://portfolio.shreyashdhage.in",
+      "priceRange": "$$",
+      "image": "https://portfolio.shreyashdhage.in/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["Pune", "India", "Remote"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Next.js Web Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI & n8n Automation"
+            }
+          }
+        ]
+      }
+    }
+  ]
 };
 
 
@@ -114,6 +145,7 @@ export default function RootLayout({ children }) {
         {/* Custom Cursor for Desktop Only */}
         <div className="cursor" />
         <div className="cursor-ring" />
+        <PageEffects />
         {children}
         <Script
           src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"
