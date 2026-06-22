@@ -132,7 +132,7 @@ export const experiences = [
   {
     company: 'Meru Technosoft',
     role: 'Next.js Developer Intern',
-    period: 'Nov 2025 – Present | Remote',
+    period: 'Nov 2025 – March 2026 | Remote',
     description: 
       "I build and maintain high-performance product websites using Next.js, TypeScript, and Tailwind CSS. As a lead frontend developer on the core product, I implement SEO best practices and technical optimizations from scratch. I built a custom Headless CMS backed by MongoDB and Azure Media Services, enabling non-technical teams to manage content and SEO metadata. I also architected REST APIs for n8n automation workflows to streamline content distribution and AI-driven processes.",
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n', 'SEO Optimization']
@@ -151,42 +151,57 @@ export const experiences = [
 export const projects = [
   {
     id: '01',
-    title: 'Web3 Crowdfunding Platform',
-    category: 'Blockchain · Next.js · Smart Contract',
-    status: 'Live · Dec 2024 – Present',
-    stats: { speed: '40% faster', responsiveness: '100% Core Web Vitals', reliability: '25% fewer bugs' },
-    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Ethers.js', 'Firebase Firestore', 'MetaMask'],
-    description: "Architected a high-performance decentralized crowdfunding platform. Optimized Web3 queries and state management for 40% faster loading. Implemented responsive design ensuring 100% compliance with mobile SEO and Core Web Vitals.",
-    image: '/images/project-1.png',
-    link: 'https://defund.shreyashdhage.in/'
+    title: 'MySQL + Next.js Master Data Management System',
+    category: 'Full-Stack · Next.js · MySQL',
+    status: 'Live · Apr 2026 – May 2026',
+    stats: { speed: 'Normalized Schema', responsiveness: 'Fuzzy Match API', reliability: 'Role-Based Auth' },
+    stack: ['Next.js', 'React', 'TypeScript', 'MySQL', 'Prisma', 'JWT', 'REST API', 'Tailwind CSS'],
+    description: "Developed a full-stack Master Data Management (MDM) system aligned with Informatica concepts. Features duplicate detection with fuzzy matching, confidence scoring, 13 database models, 17 REST endpoints, role-based access, and an ETL import tool with 7 cleansing rules.",
+    image: '/images/project-mdm.png',
+    link: 'https://mdm-system-ivory.vercel.app/',
+    github: 'https://github.com/sdhage1502/mdm-system'
   },
   {
     id: '02',
+    title: 'Decentralized Crowdfunding Platform',
+    category: 'Blockchain · Next.js · Smart Contract',
+    status: 'Live · Dec 2024 – Feb 2025',
+    stats: { speed: '40% faster load', responsiveness: '100% Core Web Vitals', reliability: '25% fewer bugs' },
+    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Ethers.js', 'Firebase Firestore', 'MetaMask'],
+    description: "Architected a high-performance decentralized crowdfunding platform. Optimized Web3 queries and state management for 40% faster loading. Implemented responsive design ensuring 100% compliance with mobile SEO and Core Web Vitals.",
+    image: '/images/project-1.png',
+    link: 'https://defund.shreyashdhage.in/',
+    github: 'https://github.com/sdhage1502/decentralized-crowdfunding'
+  },
+  {
+    id: '03',
+    title: 'Smart Weather Forecast App with AI Assistant',
+    category: 'AI Integration · React · Automation',
+    status: 'Live · May 2025 – June 2025',
+    stats: { speed: '95 Lighthouse', responsiveness: '35% faster API', reliability: 'AI Summaries' },
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'OpenWeatherMap API', 'Meta LLaMA 3.3', 'OpenRouter', 'Axios', 'Jest'],
+    description: "AI-integrated weather intelligence platform. Leveraged Meta LLaMA 3.3 via OpenRouter for contextual weather summaries and Q&A. Optimized API response times by 35% through localStorage caching and optimized Axios calls.",
+    image: '/images/project-2.png',
+    link: 'https://live-weather-dash-board.vercel.app/',
+    github: 'https://github.com/sdhage1502/Live-WeatherDashBoard'
+  },
+  {
+    id: '04',
     title: 'Crypto Market Dashboard',
     category: 'Real-time Data · Next.js · API',
-    status: 'Live · Aug 2025 – Present',
+    status: 'Live · Aug 2025',
     stats: { speed: 'Optimized LCP', responsiveness: '100% Mobile Ready', reliability: 'Type-Safe' },
     stack: ['TypeScript', 'Next.js','Axios', 'React 18','Tailwind CSS v3','React Hot Toast','Vercel'],
     description: "Real-time cryptocurrency analytics dashboard. Built with Next.js App Router for server-side rendering and SEO efficiency. Deployed on Vercel with automated performance monitoring and edge caching.",
     image: '/images/project-3.png',
-    link: 'https://crypto-dashboard-inky-one.vercel.app'
+    link: 'https://crypto-dashboard-inky-one.vercel.app',
+    github: 'https://github.com/sdhage1502/crypto-dashboard'
   },
   {
-    id: '03',
-    title: 'Smart Weather AI Assistant',
-    category: 'AI Integration · React · Automation',
-    status: 'Live · May 2024 – Present',
-    stats: { speed: '95 Lighthouse', responsiveness: '30% faster API', reliability: 'AI Reliable' },
-    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'OpenWeatherMap API', 'Meta LLaMA 3.3', 'OpenRouter', 'Axios', 'Jest'],
-    description: "AI-integrated weather intelligence platform. Leveraged Meta LLaMA 3.3 via OpenRouter for contextual summaries. Optimized API response times by 30% through advanced caching and high-performance React patterns.",
-    image: '/images/project-2.png',
-    link: 'https://live-weather-dash-board.vercel.app/'
-  },
-  {
-    id: '04',
+    id: '05',
     title: 'CMS & Content Automation',
     category: 'Headless CMS · n8n · Next.js',
-    status: 'Live · Nov 2025 – Present',
+    status: 'Live · Nov 2025 – March 2026',
     stats: { speed: 'Automated SEO', responsiveness: 'Payload CMS', reliability: 'Azure S3' },
     stack: ['Payload CMS', 'Next.js', 'TypeScript', 'MongoDB', 'Azure Media Services', 'REST API', 'n8n'],
     description: "Custom content automation platform built at Meru Technosoft. Integrates Payload CMS with n8n workflows for automated cross-platform distribution and SEO metadata management.",

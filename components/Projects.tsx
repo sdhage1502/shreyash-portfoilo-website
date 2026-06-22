@@ -1,7 +1,13 @@
+/* Hallmark · component: Projects · genre: modern-minimal · theme: custom
+ * states: default · hover · focus · active · disabled
+ * contrast: pass
+ */
+
 'use client';
 
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa';
 import { projects } from '../data/portfolioData';
 
 const Projects: React.FC = () => {
@@ -15,8 +21,8 @@ const Projects: React.FC = () => {
         const rect = wrap.getBoundingClientRect();
         const center = rect.top + rect.height / 2;
         const vhMid = window.innerHeight / 2;
-        const offset = (center - vhMid) * 0.12;
-        (img as HTMLElement).style.transform = `translateY(${offset}px)`;
+        const offset = (center - vhMid) * 0.08;
+        (img as HTMLElement).style.transform = `translateY(${offset}px) scale(1.1)`;
       });
     };
 
@@ -33,89 +39,146 @@ const Projects: React.FC = () => {
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)]">
         
         {/* Section header */}
-        <div className="reveal mb-12 lg:mb-20">
+        <div className="reveal mb-16 lg:mb-24">
           <p className="section-label">Selected Work</p>
           <h2 className="section-heading">Featured Next.js <span className="text-[var(--accent)]">&</span> AI Projects</h2>
-          <p className="text-lg font-light text-white/50 max-w-[600px] leading-relaxed mt-6">
-            From blockchain backends to AI assistants — real metrics, real users, clean architecture.
+          <p className="text-lg font-light text-white/60 max-w-[600px] leading-relaxed mt-6">
+            A curated showcase of high-impact systems, real-time dashboards, and decentralized architectures featuring full production-level metrics.
           </p>
         </div>
 
         {/* Projects list */}
-        <div className="projects-list flex flex-col gap-16 md:gap-24 lg:gap-32">
+        <div className="projects-list flex flex-col gap-20 md:gap-32 lg:gap-40">
           {projects.map((project, i) => (
             <article 
               key={project.id} 
-              className={`project-item reveal grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${
-                i % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`project-item reveal grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center`}
               data-index={project.id}
             >
               {/* Text column */}
-              <div className={`flex flex-col gap-6 sm:gap-8 ${
-                i % 2 !== 0 ? 'lg:col-start-7 lg:col-span-6' : 'lg:col-span-6'
+              <div className={`flex flex-col gap-6 sm:gap-8 lg:col-span-6 ${
+                i % 2 !== 0 ? 'lg:order-2' : ''
               }`}>
                 <div className="flex items-center gap-3 sm:gap-4">
-                  <span className="text-[14px] font-mono text-white/20">[{project.id}]</span>
-                  <span className="text-[10px] sm:text-[12px] font-bold text-[#C8FF00] tracking-widest uppercase">{project.category}</span>
+                  <span className="text-[14px] font-mono text-white/30">[{project.id}]</span>
+                  <span className="text-[10px] sm:text-[12px] font-bold text-[var(--accent)] tracking-widest uppercase">{project.category}</span>
                 </div>
 
-                <h3 className="text-[clamp(28px,3.5vw,48px)] font-extrabold text-white leading-[1.1] tracking-[-0.04em]">
+                <h3 className="text-[clamp(26px,3vw,42px)] font-black text-white leading-[1.1] tracking-[-0.03em]">
                   {project.title}
                 </h3>
                 
-                <p className="text-[clamp(16px,1.1vw,19px)] font-light leading-relaxed text-white/60">
+                <p className="text-[16px] font-light leading-relaxed text-white/70">
                   {project.description}
                 </p>
 
                 {/* Stats Row */}
-                <div className="grid grid-cols-1 xs:grid-cols-3 gap-6 sm:gap-4 lg:gap-6 py-6 sm:py-8 border-y border-white/5">
+                <div className="grid grid-cols-3 gap-4 py-4 sm:py-6 border-y border-white/10">
                   <div className="flex flex-col gap-1">
-                    <span className="text-xl lg:text-[20px] font-bold text-white tracking-tight">{project.stats.speed}</span>
-                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/30">Performance</span>
+                    <span className="text-[15px] sm:text-[17px] font-bold text-white tracking-tight tabular-nums">{project.stats.speed}</span>
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-white/40">Performance</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="text-xl lg:text-[20px] font-bold text-white tracking-tight">{project.stats.responsiveness}</span>
-                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/30">UI / Core</span>
+                    <span className="text-[15px] sm:text-[17px] font-bold text-white tracking-tight tabular-nums">{project.stats.responsiveness}</span>
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-white/40">UI / Architecture</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="text-xl lg:text-[20px] font-bold text-white tracking-tight">{project.stats.reliability}</span>
-                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-white/30">Stability</span>
+                    <span className="text-[15px] sm:text-[17px] font-bold text-white tracking-tight tabular-nums">{project.stats.reliability}</span>
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-white/40">Reliability</span>
                   </div>
                 </div>
 
+                {/* Stack Capsules */}
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map(tech => (
-                    <span key={tech} className="px-3 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-[10px] font-mono tracking-widest text-white/40">{tech}</span>
+                    <span 
+                      key={tech} 
+                      className="px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-sm text-[10px] font-mono tracking-wider text-white/50"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-6 mt-4 w-full sm:w-auto">
+                {/* Action Links */}
+                <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-4 mt-2">
                   {!project.isPrivate ? (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="cta-primary magnetic w-full sm:w-auto py-3.5">
-                      View Project
-                    </a>
+                    <>
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="cta-primary magnetic py-3 px-6 text-center text-xs flex items-center justify-center gap-2 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-[var(--accent)] outline-none"
+                        aria-label={`Visit Live Demo of ${project.title}`}
+                      >
+                        <FaExternalLinkAlt className="text-xs" aria-hidden="true" />
+                        Live Demo
+                      </a>
+                      {project.github && (
+                        <a 
+                          href={project.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="cta-secondary py-3 px-6 text-center text-xs flex items-center justify-center gap-2 hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:ring-2 focus-visible:ring-white outline-none"
+                          aria-label={`View GitHub Source Code of ${project.title}`}
+                        >
+                          <FaGithub className="text-sm" aria-hidden="true" />
+                          Source Code
+                        </a>
+                      )}
+                    </>
                   ) : (
-                    <span className="w-full sm:w-auto text-center px-8 py-3.5 rounded-sm border border-white/10 text-white/20 text-[10px] font-mono tracking-widest uppercase">
-                      Private Project
-                    </span>
+                    <div className="flex items-center gap-2.5 py-2.5 px-5 rounded border border-white/5 bg-white/[0.01] text-white/30 text-xs font-mono tracking-wider uppercase select-none w-fit">
+                      <FaLock className="text-[11px]" aria-hidden="true" />
+                      Private Repository
+                    </div>
                   )}
                 </div>
               </div>
 
               {/* Image column (Visual) */}
-              <div className={`project-visual overflow-hidden rounded-2xl aspect-video bg-white/5 border border-white/10 group cursor-pointer ${
-                i % 2 !== 0 ? 'lg:col-start-1 lg:col-span-6 lg:row-start-1' : 'lg:col-span-6'
-              }`}>
-                <div className="w-full h-full relative overflow-hidden">
-                  <Image 
-                    src={project.image} 
-                    fill
-                    className="project-img w-full h-full object-cover scale-[1.1] group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100" 
-                    alt={`${project.title} — ${project.category} Portfolio Piece`} 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                </div>
+              <div className={`project-visual overflow-hidden rounded-2xl aspect-video bg-white/5 border border-white/10 group cursor-pointer relative lg:col-span-6 ${
+                i % 2 !== 0 ? 'lg:order-1' : ''
+              } hover:border-white/20 transition-colors duration-500`}>
+                {!project.isPrivate ? (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block w-full h-full"
+                    aria-label={`Visit Live Demo of ${project.title}`}
+                  >
+                    <div className="w-full h-full relative overflow-hidden">
+                      <Image 
+                        src={project.image} 
+                        fill
+                        className="project-img w-full h-full object-cover scale-[1.1] group-hover:scale-105 transition-transform duration-[800ms] opacity-80 group-hover:opacity-100" 
+                        alt={`${project.title} — ${project.category} Preview`} 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500"></div>
+                      <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-[10px] font-mono text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <FaExternalLinkAlt className="text-[8px]" aria-hidden="true" />
+                        Launch Project
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="w-full h-full relative overflow-hidden">
+                    <Image 
+                      src={project.image} 
+                      fill
+                      className="project-img w-full h-full object-cover scale-[1.1] opacity-60" 
+                      alt={`${project.title} — ${project.category} Preview`} 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-70"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex flex-col items-center gap-2 bg-black/75 backdrop-blur-md border border-white/5 py-4 px-6 rounded-xl text-center">
+                        <FaLock className="text-white/40 text-lg" aria-hidden="true" />
+                        <span className="text-xs font-mono uppercase tracking-wider text-white/50">Internal IP / Restricted</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </article>
           ))}

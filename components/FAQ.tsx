@@ -47,10 +47,10 @@ const FAQ: React.FC = () => {
         <div className="flex flex-col gap-4">
           {faqs.map((faq, index) => (
             <details key={index} className="group bg-white/5 border border-white/10 rounded-lg overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="cursor-pointer flex items-center justify-between p-6 sm:p-8 font-medium text-lg sm:text-xl transition-colors hover:text-[#C8FF00]">
+              <summary className="cursor-pointer flex items-center justify-between p-6 sm:p-8 font-medium text-lg sm:text-xl transition-colors hover:text-[#C8FF00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8FF00] focus-visible:ring-offset-2 rounded-t-lg">
                 {faq.question}
                 <span className="ml-4 flex-shrink-0 transition-transform duration-300 group-open:-rotate-180 text-white/50 group-hover:text-[#C8FF00]">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="m6 9 6 6 6-6"/>
                   </svg>
                 </span>
