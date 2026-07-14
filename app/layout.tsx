@@ -3,6 +3,7 @@ import Script from 'next/script';
 import FloatingBackground from '../components/FloatingBackground';
 import ClaritySnippet from '../components/Clarity';
 import PageEffects from '../components/PageEffects';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 export const metadata = {
   metadataBase: new URL('https://portfolio.shreyashdhage.in'),
@@ -139,17 +140,19 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning className="bg-[#080808] text-white">
-        <ClaritySnippet />
-        <FloatingBackground />
-        <div id="scroll-bar" />
-        {/* Custom Cursor for Desktop Only */}
-        <div className="cursor" />
-        <div className="cursor-ring" />
-        <PageEffects />
-        {children}
+        <ErrorBoundary>
+          <ClaritySnippet />
+          <FloatingBackground />
+          <div id="scroll-bar" />
+          {/* Custom Cursor for Desktop Only */}
+          <div className="cursor" />
+          <div className="cursor-ring" />
+          <PageEffects />
+          {children}
+        </ErrorBoundary>
         <Script
           src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
       </body>
     </html>

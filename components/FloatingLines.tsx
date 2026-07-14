@@ -282,15 +282,35 @@ export default function FloatingLines({
     const container = containerRef.current;
     if (!container) return;
 
+    // Check if WebGL is available before attempting to create renderer.
+    // WebGL can be disabled in privacy-focused browsers (Brave, Tor)
+    // and some US corporate environments.
+    try {
+      const testCanvas = document.createElement('canvas');
+      const gl = testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl');
+      if (!gl) {
+        // WebGL not supported — degrade silently
+        return;
+      }
+    } catch {
+      return; // WebGL check itself failed
+    }
+
     let active = true;
+    let renderer: WebGLRenderer;
+
+    try {
+      renderer = new WebGLRenderer({ antialias: true, alpha: false });
+    } catch {
+      // WebGL renderer creation failed — degrade silently
+      return;
+    }
 
     const scene = new Scene();
-
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
     camera.position.z = 1;
 
-    const renderer = new WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio ?? 1, 2));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);

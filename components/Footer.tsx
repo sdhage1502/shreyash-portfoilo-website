@@ -1,6 +1,16 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 
 const Footer: React.FC = () => {
+  // Render year only after client mount to prevent hydration mismatch
+  // between server timezone (IST) and US client timezone (EST/PST).
+  const [year, setYear] = useState<string>('');
+
+  useEffect(() => {
+    setYear(new Date().getFullYear().toString());
+  }, []);
+
   return (
     <footer className="py-20 border-t border-white/5 text-center">
       <div className="max-w-[var(--container-max)] mx-auto px-[var(--gutter)] flex flex-col items-center gap-8">
@@ -15,7 +25,7 @@ const Footer: React.FC = () => {
         </div>
 
         <p className="text-[13px] font-mono tracking-[0.05em] text-white/20 mt-4">
-          © {new Date().getFullYear()} Shreyash Dhage · Hand-crafted with Next.js & AI
+          © {year || '2026'} Shreyash Dhage · Hand-crafted with Next.js & AI
         </p>
       </div>
     </footer>

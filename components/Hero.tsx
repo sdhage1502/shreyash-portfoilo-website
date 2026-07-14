@@ -7,7 +7,7 @@ const FloatingLines = dynamic(() => import('./FloatingLines'), { ssr: false });
 
 declare global {
   interface Window {
-    animateHeroEntrance: () => void;
+    animateHeroEntrance: (() => void) | undefined;
   }
 }
 
@@ -17,9 +17,13 @@ const Hero: React.FC = () => {
     window.animateHeroEntrance = () => {
       function reveal(selector: string, delay: number, childDelay?: number) {
         setTimeout(() => {
-          document.querySelectorAll(selector).forEach((el, i) => {
-            setTimeout(() => el.classList.add('in'), i * (childDelay || 0));
-          });
+          try {
+            document.querySelectorAll(selector).forEach((el, i) => {
+              setTimeout(() => el.classList.add('in'), i * (childDelay || 0));
+            });
+          } catch {
+            // Selector or DOM manipulation failed — not critical
+          }
         }, delay);
       }
       reveal('.hero-name .word',   0,   130);
@@ -34,6 +38,11 @@ const Hero: React.FC = () => {
       reveal('#header .nav-burger',  1180);
       reveal('#header .nav-links a', 1220, 80);
       reveal('#header .nav-cta',   1500);
+    };
+
+    // Cleanup: remove the global reference on unmount
+    return () => {
+      window.animateHeroEntrance = undefined;
     };
   }, []);
 

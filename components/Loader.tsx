@@ -1,19 +1,22 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 
 declare global {
   interface Window {
-    animateHeroEntrance: () => void;
+    animateHeroEntrance: (() => void) | undefined;
   }
 }
 
 const Loader: React.FC = () => {
   const [isMounted, setIsMounted] = React.useState<boolean>(true);
+  const mountedRef = useRef<boolean>(true);
 
   useEffect(() => {
-    /* ── Loader Config (Change 2) ────────────────── */
+    mountedRef.current = true;
+
+    /* ── Loader Config ────────────────── */
     const WORDS: string[] = [
       'NEXT.JS',
       'TYPESCRIPT',
@@ -43,6 +46,8 @@ const Loader: React.FC = () => {
     if (!loader || !wordEl || !barEl) return;
 
     function showWord() {
+      if (!mountedRef.current) return;
+
       if (index >= total) {
         setTimeout(exitLoader, EXIT_DELAY);
         return;
@@ -52,12 +57,15 @@ const Loader: React.FC = () => {
       if (wordEl) wordEl.classList.remove('visible');
 
       setTimeout(() => {
+        if (!mountedRef.current) return;
+
         if (wordEl) {
           wordEl.textContent = WORDS[index++];
           wordEl.classList.add('visible');
         }
 
         setTimeout(() => {
+          if (!mountedRef.current) return;
           if (wordEl) wordEl.classList.remove('visible');
           setTimeout(showWord, GAP_DURATION);
         }, HOLD_DURATION);
@@ -65,16 +73,25 @@ const Loader: React.FC = () => {
     }
 
     function exitLoader() {
+      if (!mountedRef.current) return;
+
       if (barEl) barEl.style.width = '100%';
 
       setTimeout(() => {
+        if (!mountedRef.current) return;
         if (loader) loader.classList.add('exit');
 
-        if (window.animateHeroEntrance) {
-          window.animateHeroEntrance();
+        // Guard: Hero may not have mounted yet, or may have been error-boundary'd
+        if (typeof window.animateHeroEntrance === 'function') {
+          try {
+            window.animateHeroEntrance();
+          } catch {
+            // Hero entrance animation failed — not critical, continue
+          }
         }
 
         setTimeout(() => {
+          if (!mountedRef.current) return;
           if (loader) loader.classList.add('done');
           setIsMounted(false);
         }, PANEL_DURATION + 200);
@@ -82,6 +99,10 @@ const Loader: React.FC = () => {
     }
 
     showWord();
+
+    return () => {
+      mountedRef.current = false;
+    };
   }, []);
 
   if (!isMounted) return null;

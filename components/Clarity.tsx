@@ -1,20 +1,31 @@
 'use client';
 
 import { useEffect } from 'react';
-import Clarity from '@microsoft/clarity';
 
 export default function ClaritySnippet() {
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
-
   useEffect(() => {
-    if (clarityId && typeof window !== 'undefined') {
-      try {
-        Clarity.init(clarityId);
-      } catch (error) {
-        console.error('Clarity init failed:', error);
-      }
-    }
-  }, [clarityId]);
+    const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
+
+    // Bail early if no ID configured
+    if (!clarityId || typeof window === 'undefined') return;
+
+    // Dynamic import: if ad blockers block the @microsoft/clarity module,
+    // the catch() handles it gracefully instead of crashing the component tree.
+    import('@microsoft/clarity')
+      .then((ClarityModule: any) => {
+        const Clarity = ClarityModule?.default ?? ClarityModule;
+        if (typeof Clarity?.init === 'function') {
+          Clarity.init(clarityId);
+        }
+      })
+      .catch(() => {
+        // Silently fail — Clarity blocked by ad blocker or privacy extension.
+        // This is expected for US users with uBlock Origin, Brave Shields, etc.
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[Clarity] SDK blocked or failed to load — analytics disabled.');
+        }
+      });
+  }, []);
 
   return null;
 }
